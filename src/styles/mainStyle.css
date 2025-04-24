@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&display=swap');
+
+/* Propriétés CSS de base */
+:root {
+    --bg-black-900: hsl(226, 55%, 18%);
+    --bg-white-100: #F3F3F3;
+    --text-black-100: #000000;
+    --text-black-900: #D3D3D3;
+    --text-black-700: #152149;
+    --text-white-100: #fff;
+}
+
+html,
+body {
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    font-display: swap;
+    overflow-x: hidden;
+    background-color: var(--bg-white-100);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Ubuntu', 'Arial';
+    font-size: 32px;
+}
+
+h2 {
+    font-family: 'Ubuntu', 'Arial';
+    font-size: 28px;
+}
+
+h3 {
+    font-family: 'Ubuntu', 'Arial';
+    font-size: 24px;
+}
+
+h4 {
+    font-family: 'Ubuntu', 'Arial';
+    font-size: 20px;
+}
+
+h5 {
+    font-family: 'Ubuntu', 'Arial';
+    font-size: 18px;
+}
+
+p {
+    font-family: 'Inter', 'Arial';
+    font-size: 16px;
+}
+
+/* Header */
+.infos-header-container {
+    background-color: var(--bg-black-900);
+}
+
+.infos-header-title,
+.infos-header-social {
+    margin: 15px 5%;
+}
+
+.infos-header-container p {
+    color: var(--text-white-100);
+    font-family: 'Ubuntu', 'Arial';
+
+}
+
+.infos-header-title i {
+    margin-right: 5px;
+}
+
+.infos-header-social a {
+    padding: 10px 12px;
+    margin-right: 3%;
+    color: var(--text-white-100);
+}
+
+.infos-header-social a.instagram,
+.infos-header-social a.linkedin {
+    padding: 10px 10px;
+    margin-right: 3%;
+    color: var(--text-white-100);
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    background-image: linear-gradient(rgba(21, 33, 73, 0.75), rgba(21, 33, 73, 0.75)), url("../assets/images/world_card.png");
+    background-size: 100% 140%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 2%;
+}
+
+.banner .business {
+    padding: 20px;
+    background-color: rgba(21, 33, 73, 0.7);
+    color: var(--text-white-100);
+    font-family: 'Ubuntu', 'Arial';
+}
+
+.banner h1 {
+    font-family: 'Ubuntu', 'Arial';
+    color: var(--text-white-100);
+    margin: 20px auto;
+}
+
+.banner .description {
+    color: var(--text-white-100);
+}
+
+.banner-contact {
+    background-color: var(--bg-black-900);
+    color: var(--text-white-100);
+    margin-top: 2%;
+}
+
+.banner-contact a {
+    font-family: 'Ubuntu', 'Arial';
+    padding: 20px;
+}
+
+.banner-contact a i {
+    padding-left: 10px;
+}
+
+/* NewsLetter */
+.newsletter {
+    background-color: var(--bg-white-100);
+}
+
+.newsletter img {
+    margin-top: 2%;
+}
+.newsletter h3 {
+    font-family: 'Inter', 'Arial';
+    color: var(--text-black-100);
+    margin-top: 12px;
+}
+.newsletter p {
+    font-family: 'Inter', 'Arial';
+    color: var(--text-black-100);
+    margin-top: 5px;
+}
+
+.newsletter-input {
+    margin-top: 15px;
+}
+
+.newsletter input {
+    border-color: var(--bg-black-900);
+    font-family: 'Inter', 'Arial';
+    font-size: 14px;
+    padding: 16px 20px;
+}
+
+.newsletter button {
+    background-color: var(--bg-black-900);
+    color: var(--text-white-100);
+    font-family: 'Ubuntu', 'Arial';
+}
+
+@media (max-width : 767px) {
+    .banner {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .banner-contact {
+        margin-top: 5%;
+    }
+
+    .newsletter img {
+        margin-top: 5%;
+    }
+}
