@@ -3,7 +3,7 @@ const header = () => {
   return (
     <div className="header">
         <div className='infos-header-container flex justify-between items-center p-4'>
-            <div className="infos-header-title w-[100%] sm:flex sm:w-[80%] sm:gap-10">
+            <div className="infos-header-title w-[100%] sm:flex md:w-[80%] sm:gap-10">
                 <p className=""><i className="fa-solid fa-envelope"></i>contact@hefagroups.com</p>
                 <p><i className="fa-solid fa-phone"></i>(237) 670-897-408</p>
                 <p><i className="fa-solid fa-location-dot"></i>Douala, Cameroun</p>
