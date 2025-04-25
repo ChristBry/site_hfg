@@ -75,7 +75,6 @@ p {
 .infos-header-container p {
     color: var(--text-white-100);
     font-family: 'Ubuntu', 'Arial';
-
 }
 
 .infos-header-title i {
@@ -88,11 +87,16 @@ p {
     color: var(--text-white-100);
 }
 
+.infos-header-social a:hover {
+    color: var(--text-black-100);
+    background-color: var(--bg-white-100);
+    transition: all 0.5s ease-in-out;
+}
+
 .infos-header-social a.instagram,
 .infos-header-social a.linkedin {
     padding: 10px 10px;
     margin-right: 3%;
-    color: var(--text-white-100);
 }
 
 /* Banner */
@@ -150,16 +154,18 @@ p {
 .newsletter h3 {
     font-family: 'Inter', 'Arial';
     color: var(--text-black-100);
-    margin-top: 12px;
+    margin-top: 2%;
+    font-size: 32px;
 }
 .newsletter p {
     font-family: 'Inter', 'Arial';
     color: var(--text-black-100);
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .newsletter-input {
     margin-top: 15px;
+    margin-bottom: 3%;
 }
 
 .newsletter input {
