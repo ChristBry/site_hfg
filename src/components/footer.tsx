@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const footer = () => {
     return (
         <div className='footer'>
-            <div className='lg:flex items-center lg:flex justify-around footer-container'>
+            <div className='lg:flex lg:flex justify-around footer-container'>
                 <div className="links hidden lg:flex flex-col gap-4">
                     <h3>Liens rapides</h3>
                     <div className='flex flex-col gap-4'>
@@ -47,12 +47,12 @@ const footer = () => {
 
                 </div>
             </div>
-            <div className="copyright lg:flex-row-inverse items-center justify-between border-t-2 border-t-white">
+            <div className="copyright lg:flex-row-reverse lg:flex items-center justify-between border-t-2 border-t-white">
                 <div className='footer-social flex gap-4'>
-                    <a href="https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] whatsapp"><i className="fa-brands fa-whatsapp text-xl"></i></a>
-                    <a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] facebook"><i className="fa-brands fa-facebook-f text-xl"></i></a>
-                    <a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] instagram"><i className="fa-brands fa-instagram text-xl"></i></a>
-                    <a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] linkedin"><i className="fa-brands fa-linkedin-in text-xl"></i></a>
+                    <a href="https://www.facebook.com/hefagroupsarl" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] whatsapp" aria-label='Whatsapp'><i className="fa-brands fa-whatsapp text-xl"></i></a>
+                    <a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] facebook" aria-label='Facebook'><i className="fa-brands fa-facebook-f text-xl"></i></a>
+                    <a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] instagram" aria-label='Instagram'><i className="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] linkedin" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-xl"></i></a>
                 </div>
                 <p>Copyright © 2025 HefaGroup. All Rights Reserved.</p>
             </div>

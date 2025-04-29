@@ -2,7 +2,7 @@
 
 /* Propriétés CSS de base */
 :root {
-    --bg-black-900: hsl(226, 55%, 18%);
+    --bg-black-900: #152149;
     --bg-white-100: #F3F3F3;
     --bg-or-100: #f3b63c;
     --text-black-100: #000000;
@@ -166,7 +166,7 @@ p {
 /* Banner */
 .banner {
     position: relative;
-    background-image: linear-gradient(rgba(21, 33, 73, 0.1), rgba(21, 33, 73, 0.7)), url("../assets/images/bg.png");
+    background-image: linear-gradient(rgba(21, 33, 73, 0.1), rgba(21, 33, 73, 0.7)), url("../assets/images/bg.webp");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -236,6 +236,7 @@ p {
 .about-container h2 {
     margin: 3% 0px;
     color: var(--text-black-700);
+    font-family: 'Noto sans', 'Arial';
 }
 
 .about-container p {
@@ -245,7 +246,7 @@ p {
 
 .about-vision,
 .about-mission {
-    margin-top: 3%;
+    margin: 3% 3%;
 }
 
 .about-vision i,
@@ -257,6 +258,7 @@ p {
 .about-vision h3,
 .about-mission h3 {
     color: var(--text-black-700);
+    font-family: 'Noto sans', 'Arial';
 
 }
 
@@ -291,6 +293,7 @@ p {
     color: var(--text-white-100);
     margin: 20px 0px;
     font-size: 32px;
+    font-family: 'Noto sans', 'Arial';
 }
 
 .service-description p {
@@ -326,7 +329,7 @@ p {
     padding: 10px 0px;
     font-size: 24px;
     color: var(--text-black-700);
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Noto sans', 'Arial';
 }
 
 .service:hover h4 {
@@ -389,13 +392,14 @@ p {
 .choose-container h2 {
     color: var(--text-black-700);
     margin: 2% 0%;
+    font-family: 'Noto sans', 'Arial';
 }
 
 .reason-label h1 {
     font-size: 65px;
     color: var(--text-black-700);
     opacity: 0.5;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial';
 }
 
 .reason-label h5 {
@@ -436,8 +440,8 @@ p {
 
 .team-container h2 {
     margin: 3% 0px;
-    font-size: 30px;
     color: var(--text-black-700);
+    font-family: 'Noto sans', 'Arial';
 }
 
 .team-button {
@@ -479,10 +483,11 @@ p {
 .team-info h5 {
     color: var(--text-white-100);
     font-size: 14px;
+    font-family: 'Noto sans', 'Arial';
 }
 
 .team-social {
-    margin: 8% 0px;
+    margin: 5% 0px;
 }
 
 .team-social li a {
@@ -509,7 +514,7 @@ p {
 
 /* Plus */
 .plus-part {
-    background-image: url('../assets/images/efficency.png');
+    background-image: url('../assets/images/efficency.webp');
     padding: 7% 0px;
     background-position: center;
     background-attachment: fixed;
@@ -529,10 +534,10 @@ p {
 
 .plus-button {
     background-color: var(--bg-black-900);
-    padding: 20px;
+    padding: 15px;
     margin-top: 5%;
     color: var(--text-white-100);
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Noto sans', 'Arial';
     font-size: 18px;
     transition: all 0.5s ease-in-out;
 }
@@ -561,11 +566,18 @@ p {
 }
 
 .news h5 {
-    margin-top: 12%;
     margin-left: 20px;
     color: var(--text-white-100);
     font-size: 14px;
     font-family: 'Inter', 'Arial';
+}
+
+.news .news-title1 {
+    margin-top: 12%;
+}
+
+.news .news-title2 {
+    margin-top: 10%;
 }
 
 .news p {
@@ -585,6 +597,7 @@ p {
 .news-header h2 {
     color: var(--text-black-700);
     margin: 4% 0%;
+    font-family: 'Noto sans', 'Arial';
 }
 
 .news-button {
@@ -609,6 +622,7 @@ p {
 .faq-part h2 {
     color: var(--text-white-100);
     margin: 2% 0%;
+    font-family: 'Noto sans', 'Arial';
 }
 
 .faq-part p {
@@ -825,6 +839,10 @@ p {
         margin-top: 3%;
     }
 
+    .service-description p {
+        padding: 0px 10px;
+    }
+
     .services-list {
         margin: 5% 5% 0% 5%;
     }
@@ -870,8 +888,12 @@ p {
         margin-top: 5%;
     }
 
-    .news h5 {
+    .news .news-title1 {
         margin-top: 43%;
+    }
+    
+    .news .news-title2 {
+        margin-top: 40%;
     }
 
     .news-button {
@@ -884,6 +906,10 @@ p {
 
     .copyright p {
         margin-top: 5%;
+    }
+
+    .newsletter p {
+        margin: 20px 15px;
     }
 
 }

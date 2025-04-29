@@ -1,12 +1,12 @@
 import '../styles/mainStyle.css'
 import Header from '../components/header'
-import Logo from '../assets/images/logo.png'
-import AboutImage from '../assets/images/about-img.png'
+import Logo from '../assets/images/logo.webp'
+import AboutImage from '../assets/images/about-img.webp'
 import { Link } from 'react-router-dom'
-import Why from '../assets/images/why.png'
-import Fadi from '../assets/images/fadi.png'
-import News1 from '../assets/images/news1.png'
-import Faq from '../assets/images/faq.png'
+import Why from '../assets/images/why.webp'
+import Fadi from '../assets/images/fadi.webp'
+import News1 from '../assets/images/news1.webp'
+import Faq from '../assets/images/faq.webp'
 import Footer from '../components/footer'
 import { useEffect, useRef, useState } from 'react'
 import { animate, AnimatePresence, easeOut, motion, useMotionValue, useTransform } from 'framer-motion'
@@ -175,7 +175,7 @@ const home = () => {
                 <img src={Why} alt='why' className='hidden sm:flex sm:w-[30%]' />
                 <div className="choose-container sm:w-[80%]">
                     <h4 className='w-70 text-center rounded-full '>Pourquoi nous choisir</h4>
-                    <h2 className='font-bold text-3xl'>Les Raisons Pour Lesquelles<br className='hidden sm:flex' /> Vous Devez Choisir HefaGroup</h2>
+                    <h2 className='font-bold text-2xl lg:text-3xl'>Les Raisons Pour Lesquelles<br className='hidden sm:flex' /> Vous Devez Choisir HefaGroup</h2>
                     <div className='reason'>
                         <div className='reason-label flex items-center'>
                             <h1>01</h1>
@@ -197,8 +197,8 @@ const home = () => {
                             <h1>03</h1>
                             <h5>Création de profil</h5>
                         </div>
-                        <p>Nous travaillons avec vous pour créer une proposition de valeur clairement définie
-                            et adaptée à votre marché cible.</p>
+                        <p>Nous travaillons avec vous pour créer et développer votre image marque pour quelle soit clairement définie
+                            et adaptée à vos objectifs globaux.</p>
                     </div>
                     <div className='reason'>
                         <div className='reason-label flex items-center'>
@@ -245,7 +245,7 @@ const home = () => {
             <div className="team flex flex-col sm:flex-row">
                 <div className='team-container sm:w-[80%] xl:w-[50%]'>
                     <h4 className='w-50 text-center rounded-full'>Notre Equipe</h4>
-                    <h2 className='font-bold'>Discutez Avec Nos<br /> Consultants</h2>
+                    <h2 className='font-bold text-3xl'>Discutez Avec Nos<br /> Consultants</h2>
                     <p className='text-justify'>Nous sommes spécialisés dans la transformation des entreprises et la stimulation de leur croissance
                         grâce à des analyses stratégiques et une expertise inégalée.
                     </p>
@@ -254,14 +254,14 @@ const home = () => {
                     </div>
                 </div>
                 <div className="team-image">
-                    <img src={Fadi} alt='Fadimatou' className='flex justify-center w-[80%] sm:w-[60%]' />
+                    <img src={Fadi} alt='Fadimatou' className='flex justify-center w-[85%] sm:w-[60%]' />
                     <div className='team-info flex flex-col items-center w-60 rounded-xl'>
                         <h4>Fadimatou Noutchemo</h4>
                         <h5 className='font-bold'>Senior Consulting</h5>
                         <ul className='team-social flex gap-6'>
-                            <li><a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white rounded-full w-[40px] facebook"><i className="fa-brands fa-facebook-f text-xl"></i></a></li>
-                            <li><a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white rounded-full w-[40px] instagram"><i className="fa-brands fa-instagram text-xl"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[40px] linkedin"><i className="fa-brands fa-linkedin-in text-xl"></i></a></li>
+                            <li><a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white rounded-full w-[35px] facebook flex items-center justify-center" aria-label='Facebook'><i className="fa-brands fa-facebook-f text-xl"></i></a></li>
+                            <li><a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white rounded-full w-[40px] instagram flex items-center justify-center" aria-label='Instagram'><i className="fa-brands fa-instagram text-xl"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[40px] linkedin flex items-center justify-center" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-xl"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -275,14 +275,14 @@ const home = () => {
                 <p className='text-center text-sm sm:text-xl'>Stimulez l'innovation et dominez votre segment de marché. Contactez-nous pour découvrir comment nos services de conseil
                     peuvent positionner votre entreprise comme leader.</p>
                 <div className="plus-button rounded-full text-center xl:w-[20%] sm:w-[30%]">
-                    <Link to='/'>Entrez en Contact</Link>
+                    <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank'>Entrez en Contact</a>
                 </div>
             </div>
 
             <div className="news-part flex flex-col lg:flex-row-reverse">
                 <div className='news-header'>
                     <h4 className='w-40 text-center rounded-full'>Actualités</h4>
-                    <h2 className='font-bold text-3xl'>Consultez Nos Dernières Actualités<br /> Et Analyses</h2>
+                    <h2 className='font-bold text-3xl'>Consultez Nos Dernières Actualités<br className='hidden sm:flex' /> Et Analyses</h2>
                     <p>Restez connecté à nos activités, événements et au monde
                         des affaires en Afrique grâce à nos actualités.</p>
                     <div className="news-button hidden sm:flex w-30 text-center rounded-full">
@@ -292,22 +292,24 @@ const home = () => {
                 <div className='news-container flex flex-col items-center gap-6 lg:flex-row gap-10'>
                     <div className="news w-80">
                         <Link to='/' className=''>
-                            <h4 className='absolute rounded-xl'>Finance</h4>
-                            <h5 className='absolute'>HefaGroup Libère Votre Potentiel</h5>
+                            <h4 className='absolute rounded-xl'>Entrepreneuriat</h4>
+                            <h5 className='news-title1 absolute'>HefaGroup Libère Votre Potentiel</h5>
                             <img src={News1} alt="News" className='rounded-lg' />
                         </Link>
-                        <p className='text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu augue a quam<br />
-                            cursus A non imperdiet nisl. Donec  ullamcorper fermentum sem.</p>
+                        <p className='text-justify'>Chez HefaGroup, nous croyons que chaque entreprise possède un potentiel unique prêt
+                            à être révélé. Grâce à notre approche de consulting agile et personnalisée, nous vous aidons à identifier vos leviers de croissance,
+                            à optimiser vos processus et à innover durablement.</p>
                         <Link to='/' className='button-news'>Lire Plus...</Link>
                     </div>
                     <div className="news w-80">
                         <Link to='/' className=''>
-                            <h4 className='absolute rounded-xl'>Finance</h4>
-                            <h5 className='absolute'>HefaGroup Libère Votre Potentiel</h5>
+                            <h4 className='absolute rounded-xl'>Aviation</h4>
+                            <h5 className='news-title2 absolute w-70'>L'aviation africaine à l'ère de la libre circulation : vers un ciel unifié</h5>
                             <img src={News1} alt="News" className='rounded-lg' />
                         </Link>
-                        <p className='text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu augue a quam<br />
-                            cursus A non imperdiet nisl. Donec  ullamcorper fermentum sem.</p>
+                        <p className='text-justify'>En 2024, l'Afrique franchit une étape majeure dans l'intégration régionale avec
+                            la mise en œuvre progressive du Marché Unique du Transport Aérien Africain (MUTAA). Ce projet ambitieux vise
+                            à libéraliser le ciel africain, facilitant ainsi la connectivité entre les pays du continent.</p>
                         <Link to='/' className='button-news'>Lire Plus...</Link>
                     </div>
                 </div>
@@ -392,8 +394,8 @@ const home = () => {
                 <img src={Logo} alt="logo" className='w-[60%] sm:w-[20%] mx-auto mt-10' />
                 <p className='text-center'>Inscrivez-vous à notre newsletter pour être informé de nos dernières nouvelles et mises à jour.</p>
                 <div className='newsletter-input flex items-center justify-center w-[100%]'>
-                    <input type="text" placeholder='name@mail.com' className='w-[50%] sm:w-[30%] lg:w-[25%] h-[50px] rounded-s-full border-2' />
-                    <button className='w-[40%] sm:w-[20%] xl:w-[10%] h-[53px] rounded-e-full border-2 mt-5 cursor-pointer'>S'inscrire</button>
+                    <input type="text" placeholder='name@mail.com' className='w-[60%] sm:w-[30%] lg:w-[25%] h-[50px] rounded-s-full border-2' />
+                    <button className='w-[25%] sm:w-[20%] xl:w-[10%] h-[53px] rounded-e-full border-2 mt-5 cursor-pointer'>S'inscrire</button>
                 </div>
             </div>
             <Footer />
