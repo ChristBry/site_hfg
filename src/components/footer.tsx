@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom'
 const footer = () => {
     return (
         <div className='footer'>
-            <div className='lg:flex lg:flex justify-around footer-container'>
-                <div className="links hidden lg:flex flex-col gap-4">
-                    <h3>Liens rapides</h3>
+            <div className='sm:flex justify-around footer-container'>
+                <div className="links hidden sm:flex flex-col gap-4">
+                    <h3>Quick Links</h3>
                     <div className='flex flex-col gap-4'>
-                        <Link to='/' className='links'>Acceuil</Link>
-                        <Link to='/' className='links'>Qui Sommes-Nous</Link>
-                        <Link to='/' className='links'>Actualités</Link>
+                        <Link to='/' className='links'>Home</Link>
+                        <Link to='/' className='links'>About Us</Link>
+                        <Link to='/' className='links'>News</Link>
                         <Link to='/' className='links'>Contact</Link>
                         <Link to='/' className='links'>FAQ'S</Link>
                     </div>
                 </div>
-                <div className="hidden lg:flex flex-col gap-4">
+                <div className="hidden sm:flex flex-col gap-4">
                     <h3>Services</h3>
                     <Link to='/' className='links'>Business Development</Link>
                     <Link to='/' className='links'>Representation Services</Link>
@@ -22,7 +22,7 @@ const footer = () => {
                     <Link to='/' className='links'>Training Facilitation</Link>
                 </div>
                 <div className="contact-footer">
-                    <h3>Contactez-Nous</h3>
+                    <h3>Contact Us</h3>
                     <div className="phone flex items-center gap-2">
                         <i className="fa-solid fa-phone text-2xl"></i>
                         <div>
@@ -47,7 +47,7 @@ const footer = () => {
 
                 </div>
             </div>
-            <div className="copyright lg:flex-row-reverse lg:flex items-center justify-between border-t-2 border-t-white">
+            <div className="copyright sm:flex-row-reverse sm:flex items-center justify-between border-t-2 border-t-white">
                 <div className='footer-social flex gap-4'>
                     <a href="https://www.facebook.com/hefagroupsarl" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] whatsapp" aria-label='Whatsapp'><i className="fa-brands fa-whatsapp text-xl"></i></a>
                     <a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] facebook" aria-label='Facebook'><i className="fa-brands fa-facebook-f text-xl"></i></a>

@@ -1,7 +1,7 @@
 import '../styles/mainStyle.css'
 import Header from '../components/header'
 import Logo from '../assets/images/logo.webp'
-import AboutImage from '../assets/images/about-img.webp'
+import AboutImage from '../assets/images/vision1.png'
 import { Link } from 'react-router-dom'
 import Why from '../assets/images/why.webp'
 import Fadi from '../assets/images/fadi.webp'
@@ -60,10 +60,10 @@ const home = () => {
 
     useEffect(() => {
         if (inView) {
-            const animation1 = animate(stats.stats1, 15, { duration: 2 });
-            const animation2 = animate(stats.stats2, 50, { duration: 4 });
+            const animation1 = animate(stats.stats1, 15, { duration: 1 });
+            const animation2 = animate(stats.stats2, 50, { duration: 1 });
             const animation3 = animate(stats.stats3, 5, { duration: 1 });
-            const animation4 = animate(stats.stats4, 30, { duration: 3 });
+            const animation4 = animate(stats.stats4, 30, { duration: 1 });
 
             return () => {
                 animation1.stop();
@@ -83,130 +83,123 @@ const home = () => {
                 </div>
                 <div className='banner'>
                     <p className='business w-[50%] sm:w-[30%] xl:w-[20%] text-center rounded-full'>Business Consulting</p>
-                    <h1 className='text-2xl font-bold'>Dynamisez Votre<br />Entreprise Avec Nous</h1>
-                    <p className='description text-sm'>Bénéficiez d'une croissance inégalée grâce à nos conseils d'experts. Relevez les défis et saisissez les opportunités<br className='hidden sm:flex' />
-                        opportunités et regardez votre entreprise prospérer grâce à notre excellence exceptionnelle en matière de conseil.
+                    <h1 className='text-3xl font-bold'>Empowering Your<br />Business With Us</h1>
+                    <p className='description text-sm'>Experience unparallaled growth with our expert guidance. Navigate challenges, seize opportunities, and<br className='hidden sm:flex' />
+                        watch your business flourish under our exceptional consulting excellence.
                     </p>
-                    <div className='banner-contact w-[70%] sm:w-[30%] xl:w-[20%] flex items-center justify-center rounded-full'>
-                        <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank' className='flex items-center'>Prendre un rendez-vous<i className="fa-brands fa-whatsapp text-3xl"></i></a>
+                    <div className='banner-contact w-[250px] flex items-center justify-center rounded-full'>
+                        <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank' className='flex items-center'>Make an appointment<i className="fa-brands fa-whatsapp text-3xl"></i></a>
                     </div>
                 </div>
             </motion.div>
 
-            <motion.div ref={ref} className="about flex items-center" initial="hidden" animate="visible" variants={variants}>
-                <img src={AboutImage} alt='about' className='about-img hidden sm:flex w-[40%] h-[40%] lg:w-[40%] xl:w-[30%]' />
+            <motion.div ref={ref} className="about flex flex-col lg:flex-row-reverse items-center" initial="hidden" animate="visible" variants={variants}>
                 <div className="about-container">
-                    <h4 className='w-60 text-center rounded-full'>Qui Sommes-Nous</h4>
-                    <h2 className='font-bold text-2xl sm:text-3xl'>Faites Passer Votre Entreprise<br /> Au Niveau Supérieur</h2>
-                    <p>Nous sommes une équipe de consultants africains qui accompagnent le développement des entreprises
-                        en Afrique grâce à un accompagnement stratégique et une exécution technique de haut niveau.</p>
-                    <div className='about-vision flex items-center'>
-                        <i className="fa-solid fa-pen-nib text-5xl"></i>
-                        <div>
-                            <h3 className='font-bold text-2xl'>Notre Vision</h3>
-                            <p className='text-justify'>Notre vision est de permettre aux entreprises africaines de croître durablement en leur
-                                fournissant des conseils d'experts, des solutions stratégiques et une exécution à fort
-                                impact sur tout le continent.</p>
-                        </div>
-                    </div>
-                    <div className='about-mission flex items-center'>
-                        <i className="fa-solid fa-earth-americas text-5xl"></i>
-                        <div>
-                            <h3 className='font-bold text-2xl'>Notre Mission</h3>
-                            <p className='text-justify'>Notre misssion est d'accompagner les entreprises africaines en leur fournissant des conseils
-                                stratégiques sur mesure, une expertise et des solutions innovantes à long terme.</p>
-                        </div>
-                    </div>
+                    <h4 className='w-40 text-center rounded-full'>About Us</h4>
+                    <h2 className='font-bold text-2xl sm:text-3xl'>Taking Your Business To<br /> The Next Level</h2>
+                    <p>We are a team of African consultants who support business development
+                        in Africa through strategic support and high-level technical execution.</p>
+                    <h2 className='text-2xl sm:text-2xl'>Our Vision and Values</h2>
+
+                    <p className='text-justify'>People join HEFA Group because they share our vision of making a real and lasting impact on Africa's development. They believe in
+                        our values and ethics, and above all, they want to make a difference.
+                        Our core values include performance and results (creating the best possible outcomes for clients), integrity and accountability
+                        (acting ethically and taking full responsibility), and professionalism and responsiveness (creating efficient work environments
+                        internally and with clients).
+                    </p>
                 </div>
+                <img src={AboutImage} alt='about' className='about-img sm:w-[60%] h-[80%] lg:w-[40%] xl:w-[50%]' />
             </motion.div>
 
             <div className='service-part flex flex-col items-center'>
                 <div className='service-description flex flex-col items-center'>
-                    <h4 className='rounded-full w-50 text-center'>Nos Services</h4>
-                    <h2 className='text-center font-bold'>Découvrez Les Besoins De Votre Entreprise</h2>
-                    <p className='text-center'>Nous sommes spécialisés dans la constitution et la gestion d'équipes de conseillers<br className='hidden sm:flex' />
-                        hautement qualifiés qui renforcent vos ressources internes.</p>
+                    <h4 className='rounded-full w-50 text-center'>Our Services</h4>
+                    <h2 className='text-center font-bold'>Discover Your Business Needs</h2>
+                    <p className='text-center'>We are specialize in building and managing teams of highly qualified advisors who strengthen your internal resources.</p>
                 </div>
                 <div className='services-list grid grid-cols-1 sm:grid-cols-2 lg:flex gap-4 lg:gap-6'>
                     <motion.div
                         className='service flex flex-col items-center rounded-xl lg:w-[30%]'
-
                         whileTap={{ scale: 1.1 }}
                     >
                         <i className="fa-solid fa-business-time text-4xl"></i>
                         <h4 className='font-bold text-center'>Business Development</h4>
-                        <p className='text-center'>Nous sommes spécialisés dans la constitution et
-                            la gestion d'équipes de conseillers hautement qualifiés qui renforcent vos ressources internes.
-                        </p>
-                        <Link to='/' className='service-button'>En savoir-plus...</Link>
+                        <p className='text-justify'>We specialize in assembling and managing teams of highly
+                            skilled advisors who augment your in-house resources by
+                            providing valuable business models, strategies, and plans
+                            across Africa.</p>
+                        <Link to='/' className='service-button'>Learn more...</Link>
                     </motion.div>
                     <motion.div className='service flex flex-col items-center rounded-xl lg:w-[30%]'
                         whileTap={{ scale: 1.1 }}
                     >
                         <i className="fa-solid fa-building text-4xl"></i>
                         <h4 className='font-bold text-center'>Representation Services</h4>
-                        <p className='text-center'>Nous offrons des services de représentation professionnelle aux entreprises souhaitant
-                            établir ou étendre leur présence sur les marchés africains.</p>
-                        <Link to='/' className='service-button'>En savoir-plus...</Link>
+                        <p className='text-justify'>We offer professional representation services for
+                            companies looking to establish or expand their presence in
+                            African markets, ensuring your interests are properly represented.
+                        </p>
+                        <Link to='/' className='service-button'>Learn more...</Link>
                     </motion.div>
                     <motion.div className='service flex flex-col items-center rounded-xl lg:w-[30%]'
                         whileTap={{ scale: 1.1 }}
                     >
                         <i className="fa-solid fa-users text-4xl"></i>
                         <h4 className='font-bold text-center'>Corporate Events</h4>
-                        <p className='text-center'>Notre équipe est spécialisée dans l’organisation et la gestion d’événements d’entreprise qui
-                            contribuent à renforcer la présence de votre marque.</p>
-                        <Link to='/' className='service-button'>En savoir-plus...</Link>
+                        <p className='text-justify'>Our team specializes in organizing and managing corporate
+                            events that help build your brand presence and establish
+                            valuable connections in target markets.</p>
+                        <Link to='/' className='service-button'>Learn more...</Link>
                     </motion.div>
                     <motion.div className='service flex flex-col items-center rounded-xl lg:w-[30%]'
                         whileTap={{ scale: 1.1 }}
                     >
                         <i className="fa-solid fa-user-pen text-4xl"></i>
                         <h4 className='font-bold text-center'>Training Facilitation</h4>
-                        <p className='text-center'>Nous proposons des programmes de formation spécialisés conçus pour améliorer les compétences
-                            et les capacités de votre équipe.</p>
-                        <Link to='/' className='service-button'>En savoir-plus...</Link>
+                        <p className='text-justify'>We provide specialized training programs designed to
+                            enhance the skills and capabilities of your team, preparing
+                            them for success in African markets.</p>
+                        <Link to='/' className='service-button'>Learn more...</Link>
                     </motion.div>
                 </div>
-                <Link to='/' className='allservice-button flex items-center justify-center rounded-full w-[40%] sm:w-[30%] lg:w-[18%] text-center'>Tous Les Services</Link>
+                <Link to='/' className='allservice-button flex items-center justify-center rounded-full w-[180px] text-center'>All Services</Link>
             </div>
 
             <div className="choose-part flex items-center">
                 <img src={Why} alt='why' className='hidden sm:flex sm:w-[30%]' />
                 <div className="choose-container sm:w-[80%]">
-                    <h4 className='w-70 text-center rounded-full '>Pourquoi nous choisir</h4>
-                    <h2 className='font-bold text-2xl lg:text-3xl'>Les Raisons Pour Lesquelles<br className='hidden sm:flex' /> Vous Devez Choisir HefaGroup</h2>
+                    <h4 className='w-50 text-center rounded-full '>Why Choose Us</h4>
+                    <h2 className='font-bold text-2xl lg:text-3xl'>Our Business Development Approach</h2>
                     <div className='reason'>
                         <div className='reason-label flex items-center'>
-                            <h1>01</h1>
-                            <h5>Valorisation de votre entreprise</h5>
+                            <h1>01-</h1>
+                            <h5>Proposition Development</h5>
                         </div>
-                        <p className='text-justify'>Nous travaillons avec vous pour créer une proposition de valeur clairement définie
-                            et adaptée à votre marché cible.</p>
+                        <p className='text-justify'>We work with you to create aclearly defined value
+                            proposition that resonates with your target market.</p>
                     </div>
                     <div className='reason'>
                         <div className='reason-label flex items-center'>
-                            <h1>02</h1>
-                            <h5>Stratégie de croissance</h5>
+                            <h1>02-</h1>
+                            <h5>Growth Strategy</h5>
                         </div>
-                        <p className='text-justify'>Nous travaillons avec votre équipe pour élaborer des plans de croissance complets, adaptés
-                            à vos objectifs commerciaux et aux conditions du marché.</p>
+                        <p className='text-justify'>Our team devises comprehensive growth plans tailored to your specific
+                            business objectives and market conditions.</p>
                     </div>
                     <div className='reason'>
                         <div className='reason-label flex items-center'>
-                            <h1>03</h1>
-                            <h5>Création de profil</h5>
+                            <h1>03-</h1>
+                            <h5>Profile Building</h5>
                         </div>
-                        <p>Nous travaillons avec vous pour créer et développer votre image marque pour quelle soit clairement définie
-                            et adaptée à vos objectifs globaux.</p>
+                        <p>We help build your credibility and visibility in target markets through strategic communications.</p>
                     </div>
                     <div className='reason'>
                         <div className='reason-label flex items-center'>
-                            <h1>04</h1>
-                            <h5>Acquisition de clients</h5>
+                            <h1>04-</h1>
+                            <h5>Client Acquisition</h5>
                         </div>
-                        <p>Nos développeurs commerciaux expérimentés présentent votre proposition de manière
-                            convaincante, en établissant une relation de confiance et en comprenant les objectifs des prospects.</p>
+                        <p>Our experienced business developers deliver your proposition in a compelling way, building rapport and
+                            understanding prospect objectives.</p>
                     </div>
                 </div>
             </div>
@@ -217,14 +210,14 @@ const home = () => {
                         <p className='plus'>+</p>
                         <motion.h1 className='text-4xl xl:text-6xl'>{rounded1}</motion.h1>
                     </div>
-                    <p className='text-center text-sm sm:text-xl'>Années d'expérience</p>
+                    <p className='text-center text-sm sm:text-xl'>Years of experience</p>
                 </div>
                 <div className="stats-experience flex flex-col items-center xl:w-[25%] sm:w-[50%]">
                     <div className='flex items-center'>
                         <p className='plus'>+</p>
                         <motion.h1 className='text-4xl xl:text-6xl'>{rounded2}</motion.h1>
                     </div>
-                    <p className='text-center text-sm sm:text-xl'>Clients Satisfait</p>
+                    <p className='text-center text-sm sm:text-xl'>Satisfied Customers</p>
                 </div>
                 <div className="stats-experience flex flex-col items-center xl:w-[25%] sm:w-[50%]">
                     <div className='flex items-center'>
@@ -238,24 +231,23 @@ const home = () => {
                         <p className='plus'>+</p>
                         <motion.h1 className='text-4xl xl:text-6xl'>{rounded4}</motion.h1>
                     </div>
-                    <p className='text-center text-sm sm:text-xl'>Problèmes Résolus</p>
+                    <p className='text-center text-sm sm:text-xl'>Problems Solved</p>
                 </div>
             </div>
 
             <div className="team flex flex-col sm:flex-row">
                 <div className='team-container sm:w-[80%] xl:w-[50%]'>
-                    <h4 className='w-50 text-center rounded-full'>Notre Equipe</h4>
-                    <h2 className='font-bold text-3xl'>Discutez Avec Nos<br /> Consultants</h2>
-                    <p className='text-justify'>Nous sommes spécialisés dans la transformation des entreprises et la stimulation de leur croissance
-                        grâce à des analyses stratégiques et une expertise inégalée.
+                    <h4 className='w-50 text-center rounded-full'>Expert Team</h4>
+                    <h2 className='font-bold text-3xl'>Let’s Talk With<br /> Our Consultants</h2>
+                    <p className='text-justify'>We are specialize in transforming businesses and fostering
+                        growth through strategic insights and unparalleled expertise.
                     </p>
-                    <div className='team-button hidden sm:flex w-[30%] rounded-full items-center justify-center'>
-                        <Link to='/' className='text-center'>Voir plus <i className="fa-solid fa-arrow-right"></i></Link>
+                    <div className='team-button hidden sm:flex w-[180px] rounded-full items-center justify-center'>
+                        <Link to='/' className='text-center'>See All <i className="fa-solid fa-arrow-right"></i></Link>
                     </div>
                 </div>
                 <div className="team-image">
-                    <img src={Fadi} alt='Fadimatou' className='flex justify-center w-[85%] sm:w-[60%]' />
-                    <div className='team-info flex flex-col items-center w-60 rounded-xl'>
+                    <div className='team-info absolute flex flex-col items-center w-60 rounded-xl'>
                         <h4>Fadimatou Noutchemo</h4>
                         <h5 className='font-bold'>Senior Consulting</h5>
                         <ul className='team-social flex gap-6'>
@@ -264,70 +256,69 @@ const home = () => {
                             <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[40px] linkedin flex items-center justify-center" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-xl"></i></a></li>
                         </ul>
                     </div>
+                    <img src={Fadi} alt='Fadimatou' className='flex justify-center w-[85%] sm:w-[80%] xl:w-[60%]' />
                 </div>
                 <div className='team-button flex sm:hidden w-[40%] rounded-full items-center justify-center text-center'>
-                    <Link to='/' className=''>Voir plus <i className="fa-solid fa-arrow-right"></i></Link>
+                    <Link to='/' className=''>See All <i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
             </div>
 
             <div className="plus-part flex flex-col items-center">
-                <h1 className='text-center text-4xl'>Optimiser Vos Opérations Pour Une Efficacité Maximale</h1>
-                <p className='text-center text-sm sm:text-xl'>Stimulez l'innovation et dominez votre segment de marché. Contactez-nous pour découvrir comment nos services de conseil
-                    peuvent positionner votre entreprise comme leader.</p>
-                <div className="plus-button rounded-full text-center xl:w-[20%] sm:w-[30%]">
-                    <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank'>Entrez en Contact</a>
+                <h1 className='text-center text-4xl'>Optimize Operations for Maximum Efficiency</h1>
+                <p className='text-center text-sm sm:text-xl'>Drive innovation and lead your market segment. Contact us to explore how our consulting can
+                    position your business as a front.</p>
+                <div className="plus-button rounded-full text-center w-[180px]">
+                    <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank'>Get In Touch</a>
                 </div>
             </div>
 
             <div className="news-part flex flex-col lg:flex-row-reverse">
                 <div className='news-header'>
-                    <h4 className='w-40 text-center rounded-full'>Actualités</h4>
-                    <h2 className='font-bold text-3xl'>Consultez Nos Dernières Actualités<br className='hidden sm:flex' /> Et Analyses</h2>
-                    <p>Restez connecté à nos activités, événements et au monde
-                        des affaires en Afrique grâce à nos actualités.</p>
-                    <div className="news-button hidden sm:flex w-30 text-center rounded-full">
-                        <Link to='/' className=' w-30'>Voir Plus</Link>
+                    <h4 className='w-40 text-center rounded-full'>Last Articles</h4>
+                    <h2 className='font-bold text-3xl'>Read Our Recent News & Insights</h2>
+                    <p>Stay connected to our activities, events and the business world in Africa through our news.</p>
+                    <div className="news-button hidden lg:flex w-30 text-center rounded-full">
+                        <Link to='/' className=' w-30'>View More</Link>
                     </div>
                 </div>
-                <div className='news-container flex flex-col items-center gap-6 lg:flex-row gap-10'>
+                <div className='news-container flex flex-col items-center sm:flex-row gap-10'>
                     <div className="news w-80">
                         <Link to='/' className=''>
-                            <h4 className='absolute rounded-xl'>Entrepreneuriat</h4>
-                            <h5 className='news-title1 absolute'>HefaGroup Libère Votre Potentiel</h5>
+                            <h4 className='absolute rounded-xl'>Business</h4>
+                            <h5 className='absolute news-title1 absolute'>HefaGroup Unleashes Your Potential</h5>
                             <img src={News1} alt="News" className='rounded-lg' />
                         </Link>
-                        <p className='text-justify'>Chez HefaGroup, nous croyons que chaque entreprise possède un potentiel unique prêt
-                            à être révélé. Grâce à notre approche de consulting agile et personnalisée, nous vous aidons à identifier vos leviers de croissance,
-                            à optimiser vos processus et à innover durablement.</p>
-                        <Link to='/' className='button-news'>Lire Plus...</Link>
+                        <p className='text-justify'>At HefaGroup, we believe that every company has unique potential ready to be unlocked.
+                            Through our agile and personalized consulting approach, we help you identify your growth drivers, optimize your processes,
+                            and innovate sustainably.</p>
+                        <Link to='/' className='button-news'>Read More...</Link>
                     </div>
                     <div className="news w-80">
                         <Link to='/' className=''>
                             <h4 className='absolute rounded-xl'>Aviation</h4>
-                            <h5 className='news-title2 absolute w-70'>L'aviation africaine à l'ère de la libre circulation : vers un ciel unifié</h5>
+                            <h5 className='absolute news-title2 absolute w-70'>African aviation in the era of free movement: towards a unified sky</h5>
                             <img src={News1} alt="News" className='rounded-lg' />
                         </Link>
-                        <p className='text-justify'>En 2024, l'Afrique franchit une étape majeure dans l'intégration régionale avec
-                            la mise en œuvre progressive du Marché Unique du Transport Aérien Africain (MUTAA). Ce projet ambitieux vise
-                            à libéraliser le ciel africain, facilitant ainsi la connectivité entre les pays du continent.</p>
-                        <Link to='/' className='button-news'>Lire Plus...</Link>
+                        <p className='text-justify'>In 2024, Africa will take a major step forward in regional integration with the gradual implementation of the Single African Air Transport Market (SAATM).
+                            This ambitious project aims to liberalize African skies, thus facilitating connectivity between the countries.</p>
+                        <Link to='/' className='button-news'>Read More...</Link>
                     </div>
                 </div>
-                <div className="news-button flex sm:hidden w-30 text-center rounded-full">
-                    <Link to='/' className=' w-30'>Voir Plus</Link>
+                <div className="news-button flex lg:hidden w-30 text-center rounded-full">
+                    <Link to='/' className=' w-30'>View More</Link>
                 </div>
             </div>
 
             <div className="faq-part flex">
-                <div className="faq-container xl:w-[90%]">
+                <div className="faq-container w-[500px] xl:w-[60%]">
                     <h4 className='w-30 text-center rounded-full'>FAQ'S</h4>
-                    <h2 className='font-bold text-2xl lg:text-3xl'>Posez toutes vos questions<br className='hidden sm:flex' /> sur les affaires</h2>
-                    <p className='text-justify'>Nous sommes spécialisés dans la transformation des entreprises et la stimulation de leur croissance
-                        grâce à des analyses stratégiques et une expertise inégalée.</p>
+                    <h2 className='font-bold text-2xl lg:text-3xl'>Let’s Ask Anything About Business</h2>
+                    <p className='text-justify'>We are specialize in transforming businesses and fostering
+                        growth through strategic insights and unparalleled expertise.</p>
                     <div className='faq-list flex flex-col gap-2'>
                         <div className='faq sm:w-[100%] lg:w-[80%]' ref={faqRef1} onClick={handleClickFaq}>
                             <div className='faq-header flex items-center justify-between rounded-xl cursor-pointer'>
-                                <h5>Comment savoir si mon entreprise a besoin de services de conseil ?</h5>
+                                <h5>How do i know if my business needs consulting<br className='hidden lg:flex' /> services ?</h5>
                                 <i className="fa-solid fa-chevron-down"></i>
                             </div>
                             <AnimatePresence initial={false}>
@@ -338,16 +329,17 @@ const home = () => {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0 }}
                                     >
-                                        Si votre entreprise a du mal à surmonter certains défis ou à capitaliser sur les opportunités,
-                                        les services de conseil peuvent fournir l'expertise et le soutien nécessaires pour naviguer et réussir
-                                        dans le paysage concurrentiel d'aujourd'hui.</motion.p>
+                                        If your business is struggling to overcome challenges or capitalize on opportunities,
+                                        consulting services can provide the expertise and support needed to navigate and succeed
+                                        in today's competitive landscape.
+                                    </motion.p>
                                 )}
                             </AnimatePresence>
 
                         </div>
                         <div className='faq sm:w-[100%] lg:w-[80%]' ref={faqRef2} onClick={handleClickFaq}>
                             <div className='faq-header flex items-center justify-between rounded-xl cursor-pointer' onClick={handleClickFaq}>
-                                <h5>Comment fonctionne généralement le processus de conseil ?</h5>
+                                <h5>How does the counseling process typically work ?</h5>
                                 <i className="fa-solid fa-chevron-down"></i>
                             </div>
                             <AnimatePresence initial={false}>
@@ -358,15 +350,16 @@ const home = () => {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0 }}
                                     >
-                                        Si votre entreprise a du mal à surmonter certains défis ou à capitaliser sur les opportunités,
-                                        les services de conseil peuvent fournir l'expertise et le soutien nécessaires pour naviguer et réussir
-                                        dans le paysage concurrentiel d'aujourd'hui.</motion.p>
+                                        The counseling process generally begins with an initial consultation, where the counselor
+                                        and client discuss the client’s concerns, goals, and expectations. This is followed by a series
+                                        of regular sessions, during which the counselor helps the client explore thoughts, emotions, and behaviors
+                                        in a safe and supportive environment.</motion.p>
                                 )}
                             </AnimatePresence>
                         </div>
                         <div className='faq sm:w-[100%] lg:w-[80%]' ref={faqRef3} onClick={handleClickFaq}>
                             <div className='faq-header flex items-center justify-between rounded-xl cursor-pointer' onClick={handleClickFaq}>
-                                <h5>Dans quel secteur d'activité êtes-vous spécialisé ?</h5>
+                                <h5>What sector of activity do you specialize in ?</h5>
                                 <i className="fa-solid fa-chevron-down"></i>
                             </div>
                             <AnimatePresence initial={false}>
@@ -377,25 +370,26 @@ const home = () => {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0 }}
                                     >
-                                        Si votre entreprise a du mal à surmonter certains défis ou à capitaliser sur les opportunités,
-                                        les services de conseil peuvent fournir l'expertise et le soutien nécessaires pour naviguer et réussir
-                                        dans le paysage concurrentiel d'aujourd'hui.</motion.p>
+                                        We specialize in business consulting, helping companies improve their performance, structure their strategies,
+                                        and achieve sustainable growth. Our services cover key areas such as strategic planning, organizational development,
+                                        digital transformation, market analysis, and operational efficiency. We work closely with startups, SMEs, and institutions
+                                        to unlock their full potential and navigate complex business environments with confidence.</motion.p>
                                 )}
                             </AnimatePresence>
                         </div>
                     </div>
 
                 </div>
-                <div className="faq-image hidden lg:flex">
-                    <img src={Faq} alt='FAQ' className='' />
+                <div className="faq-image hidden sm:flex">
+                    <img src={Faq} alt='FAQ' className='w-[500px] h-[500px]' />
                 </div>
             </div>
             <div className='newsletter justify-center items-center flex flex-col'>
                 <img src={Logo} alt="logo" className='w-[60%] sm:w-[20%] mx-auto mt-10' />
-                <p className='text-center'>Inscrivez-vous à notre newsletter pour être informé de nos dernières nouvelles et mises à jour.</p>
+                <p className='text-center'>Subscribe to our newsletter to be informed of our latest news and updates.</p>
                 <div className='newsletter-input flex items-center justify-center w-[100%]'>
                     <input type="text" placeholder='name@mail.com' className='w-[60%] sm:w-[30%] lg:w-[25%] h-[50px] rounded-s-full border-2' />
-                    <button className='w-[25%] sm:w-[20%] xl:w-[10%] h-[53px] rounded-e-full border-2 mt-5 cursor-pointer'>S'inscrire</button>
+                    <button className='w-[25%] sm:w-[20%] xl:w-[10%] h-[53px] rounded-e-full border-2 mt-5 cursor-pointer'>Subscribe</button>
                 </div>
             </div>
             <Footer />
