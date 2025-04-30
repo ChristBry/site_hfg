@@ -108,7 +108,7 @@ const home = () => {
                         internally and with clients).
                     </p>
                 </div>
-                <img src={AboutImage} alt='about' className='about-img sm:w-[60%] h-[80%] lg:w-[40%] xl:w-[50%]' />
+                <img src={AboutImage} alt='about' className='about-img w-[90%] sm:w-[60%] h-[80%] lg:w-[40%] xl:w-[50%]' />
             </motion.div>
 
             <div className='service-part flex flex-col items-center'>
