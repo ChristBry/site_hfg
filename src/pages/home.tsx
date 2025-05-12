@@ -1,21 +1,20 @@
 import '../styles/mainStyle.css'
 import Header from '../components/header'
-import Logo from '../assets/images/logo.webp'
-import AboutImage from '../assets/images/vision1.png'
+import AboutImage from '../assets/images/vision1.webp'
 import { Link } from 'react-router-dom'
 import Why from '../assets/images/why.webp'
-import Fadi from '../assets/images/fadi.webp'
-import News1 from '../assets/images/news1.webp'
+import Fadi from '../assets/images/fadi.jpg'
+import News1 from '../assets/images/news2.webp'
+import News2 from '../assets/images/saatm.png'
 import Faq from '../assets/images/faq.webp'
 import Footer from '../components/footer'
-import { useEffect, useRef, useState } from 'react'
-import { animate, AnimatePresence, easeOut, motion, useMotionValue, useTransform } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import Stats from '../components/stats'
+import NewsLetter from '../components/newsLetter'
+import { useRef, useState } from 'react'
+import { AnimatePresence, easeOut, motion } from 'framer-motion'
 
 const home = () => {
-    const [ref, inView] = useInView({
-        threshold: 0.9,
-    })
+    
     const [isOpenFaq1, setIsOpenFaq1] = useState(false)
     const [isOpenFaq2, setIsOpenFaq2] = useState(false)
     const [isOpenFaq3, setIsOpenFaq3] = useState(false)
@@ -37,8 +36,8 @@ const home = () => {
     const variants = {
         hidden: { opacity: 0, y: 100 },
         visible: {
-            opacity: inView ? 0 : 1,
-            y: inView ? 100 : 0,
+            opacity: 1,
+            y: 0,
             transition: {
                 duration: 1,
                 ease: easeOut,
@@ -46,37 +45,9 @@ const home = () => {
         }
     }
 
-    const stats = {
-        stats1: useMotionValue(0),
-        stats2: useMotionValue(0),
-        stats3: useMotionValue(0),
-        stats4: useMotionValue(0),
-    };
-
-    const rounded1 = useTransform(stats.stats1, (value) => Math.round(value))
-    const rounded2 = useTransform(stats.stats2, (value) => Math.round(value))
-    const rounded3 = useTransform(stats.stats3, (value) => Math.round(value))
-    const rounded4 = useTransform(stats.stats4, (value) => Math.round(value))
-
-    useEffect(() => {
-        if (inView) {
-            const animation1 = animate(stats.stats1, 15, { duration: 1 });
-            const animation2 = animate(stats.stats2, 50, { duration: 1 });
-            const animation3 = animate(stats.stats3, 5, { duration: 1 });
-            const animation4 = animate(stats.stats4, 30, { duration: 1 });
-
-            return () => {
-                animation1.stop();
-                animation2.stop();
-                animation3.stop();
-                animation4.stop();
-            };
-        }
-    }, [inView])
-
     return (
         <div className='home'>
-            <motion.div ref={ref} initial="hidden" animate="visible" variants={variants}>
+            <div>
                 <Header />
                 <div className="space">
 
@@ -91,9 +62,9 @@ const home = () => {
                         <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank' className='flex items-center'>Make an appointment<i className="fa-brands fa-whatsapp text-3xl"></i></a>
                     </div>
                 </div>
-            </motion.div>
+            </div>
 
-            <motion.div ref={ref} className="about flex flex-col lg:flex-row-reverse items-center" initial="hidden" animate="visible" variants={variants}>
+            <div className="about flex flex-col lg:flex-row-reverse items-center">
                 <div className="about-container">
                     <h4 className='w-40 text-center rounded-full'>About Us</h4>
                     <h2 className='font-bold text-2xl sm:text-3xl'>Taking Your Business To<br /> The Next Level</h2>
@@ -109,7 +80,7 @@ const home = () => {
                     </p>
                 </div>
                 <img src={AboutImage} alt='about' className='about-img w-[90%] sm:w-[60%] h-[80%] lg:w-[40%] xl:w-[50%]' />
-            </motion.div>
+            </div>
 
             <div className='service-part flex flex-col items-center'>
                 <div className='service-description flex flex-col items-center'>
@@ -162,7 +133,7 @@ const home = () => {
                         <Link to='/' className='service-button'>Learn more...</Link>
                     </motion.div>
                 </div>
-                <Link to='/' className='allservice-button flex items-center justify-center rounded-full w-[180px] text-center'>All Services</Link>
+                <Link to='/services' className='allservice-button flex items-center justify-center rounded-full w-[180px] text-center'>All Services</Link>
             </div>
 
             <div className="choose-part flex items-center">
@@ -204,36 +175,7 @@ const home = () => {
                 </div>
             </div>
 
-            <div ref={ref} className="stats flex justify-center items-center sm:gap-20">
-                <div className="stats-experience flex flex-col items-center xl:w-[25%] sm:w-[50%]">
-                    <div className='flex items-center'>
-                        <p className='plus'>+</p>
-                        <motion.h1 className='text-4xl xl:text-6xl'>{rounded1}</motion.h1>
-                    </div>
-                    <p className='text-center text-sm sm:text-xl'>Years of experience</p>
-                </div>
-                <div className="stats-experience flex flex-col items-center xl:w-[25%] sm:w-[50%]">
-                    <div className='flex items-center'>
-                        <p className='plus'>+</p>
-                        <motion.h1 className='text-4xl xl:text-6xl'>{rounded2}</motion.h1>
-                    </div>
-                    <p className='text-center text-sm sm:text-xl'>Satisfied Customers</p>
-                </div>
-                <div className="stats-experience flex flex-col items-center xl:w-[25%] sm:w-[50%]">
-                    <div className='flex items-center'>
-                        <p className='plus'>+</p>
-                        <motion.h1 className='text-4xl xl:text-6xl'>{rounded3}</motion.h1>
-                    </div>
-                    <p className='text-center text-sm sm:text-xl'>Expert Consultant</p>
-                </div>
-                <div className="stats-experience flex flex-col items-center xl:w-[25%] sm:w-[50%]">
-                    <div className='flex items-center'>
-                        <p className='plus'>+</p>
-                        <motion.h1 className='text-4xl xl:text-6xl'>{rounded4}</motion.h1>
-                    </div>
-                    <p className='text-center text-sm sm:text-xl'>Problems Solved</p>
-                </div>
-            </div>
+            <Stats />
 
             <div className="team flex flex-col sm:flex-row">
                 <div className='team-container sm:w-[80%] xl:w-[50%]'>
@@ -243,7 +185,7 @@ const home = () => {
                         growth through strategic insights and unparalleled expertise.
                     </p>
                     <div className='team-button hidden sm:flex w-[180px] rounded-full items-center justify-center'>
-                        <Link to='/' className='text-center'>See All <i className="fa-solid fa-arrow-right"></i></Link>
+                        <Link to='/about' className='text-center'>See All <i className="fa-solid fa-arrow-right"></i></Link>
                     </div>
                 </div>
                 <div className="team-image">
@@ -256,7 +198,7 @@ const home = () => {
                             <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[40px] linkedin flex items-center justify-center" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-xl"></i></a></li>
                         </ul>
                     </div>
-                    <img src={Fadi} alt='Fadimatou' className='flex justify-center w-[85%] sm:w-[80%] xl:w-[60%]' />
+                    <img src={Fadi} alt='Fadimatou' className='flex justify-center rounded-xl w-[85%] sm:w-[80%] xl:w-[60%]' />
                 </div>
                 <div className='team-button flex sm:hidden w-[40%] rounded-full items-center justify-center text-center'>
                     <Link to='/' className=''>See All <i className="fa-solid fa-arrow-right"></i></Link>
@@ -278,34 +220,34 @@ const home = () => {
                     <h2 className='font-bold text-3xl'>Read Our Recent News & Insights</h2>
                     <p>Stay connected to our activities, events and the business world in Africa through our news.</p>
                     <div className="news-button hidden lg:flex w-30 text-center rounded-full">
-                        <Link to='/' className=' w-30'>View More</Link>
+                        <Link to='/news' className=' w-30'>View More</Link>
                     </div>
                 </div>
-                <div className='news-container flex flex-col items-center sm:flex-row gap-10'>
+                <div className='news-container flex flex-col sm:flex-row gap-10'>
                     <div className="news w-80">
-                        <Link to='/' className=''>
+                        <Link to='/news/Unlocking-Your-Company-s-Potential' className=''>
                             <h4 className='absolute rounded-xl'>Business</h4>
-                            <h5 className='absolute news-title1 absolute'>HefaGroup Unleashes Your Potential</h5>
-                            <img src={News1} alt="News" className='rounded-lg' />
+                            <img src={News1} alt="News" className='rounded-lg sm:hover:scale-105 transition-all duration-300' />
                         </Link>
+                        <h5 className='text-xl font-bold'>HefaGroup Unleashes Your Potential</h5>
                         <p className='text-justify'>At HefaGroup, we believe that every company has unique potential ready to be unlocked.
                             Through our agile and personalized consulting approach, we help you identify your growth drivers, optimize your processes,
                             and innovate sustainably.</p>
-                        <Link to='/' className='button-news'>Read More...</Link>
+                        <Link to='/news/Unlocking-Your-Company-s-Potential' className='button-news'>Read More...</Link>
                     </div>
                     <div className="news w-80">
-                        <Link to='/' className=''>
+                        <Link to='/news/SAATM' className=''>
                             <h4 className='absolute rounded-xl'>Aviation</h4>
-                            <h5 className='absolute news-title2 absolute w-70'>African aviation in the era of free movement: towards a unified sky</h5>
-                            <img src={News1} alt="News" className='rounded-lg' />
+                            <img src={News2} alt="News" className='rounded-lg h-[170px] sm:hover:scale-105 transition-all duration-300' />
                         </Link>
+                        <h5 className='text-xl font-bold'>African aviation in the era of free movement: towards a unified sky</h5>
                         <p className='text-justify'>In 2024, Africa will take a major step forward in regional integration with the gradual implementation of the Single African Air Transport Market (SAATM).
                             This ambitious project aims to liberalize African skies, thus facilitating connectivity between the countries.</p>
-                        <Link to='/' className='button-news'>Read More...</Link>
+                        <Link to='/news/SAATM' className='button-news'>Read More...</Link>
                     </div>
                 </div>
                 <div className="news-button flex lg:hidden w-30 text-center rounded-full">
-                    <Link to='/' className=' w-30'>View More</Link>
+                    <Link to='/news' className=' w-30'>View More</Link>
                 </div>
             </div>
 
@@ -384,14 +326,7 @@ const home = () => {
                     <img src={Faq} alt='FAQ' className='w-[500px] h-[500px]' />
                 </div>
             </div>
-            <div className='newsletter justify-center items-center flex flex-col'>
-                <img src={Logo} alt="logo" className='w-[60%] sm:w-[20%] mx-auto mt-10' />
-                <p className='text-center'>Subscribe to our newsletter to be informed of our latest news and updates.</p>
-                <div className='newsletter-input flex items-center justify-center w-[100%]'>
-                    <input type="text" placeholder='name@mail.com' className='w-[60%] sm:w-[30%] lg:w-[25%] h-[50px] rounded-s-full border-2' />
-                    <button className='w-[25%] sm:w-[20%] xl:w-[10%] h-[53px] rounded-e-full border-2 mt-5 cursor-pointer'>Subscribe</button>
-                </div>
-            </div>
+            <NewsLetter />
             <Footer />
         </div>
     )

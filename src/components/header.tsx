@@ -1,9 +1,19 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import logo from "../assets/images/logo.webp"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const header = () => {
     const [open, setOpen] = useState(false)
+    const navBar = useRef<HTMLUListElement>(null)
+    const location = useLocation();
+    const menuItems = [
+        { to: '/', label: 'Home' },
+        { to: '/about', label: 'About Us' },
+        { to: '/services', label: 'Services' },
+        { to: '/news', label: 'News' },
+        { to: '/contact', label: 'Contact' }
+    ]
+    
     useEffect(() => {
         const handleScroll = () => {
             const headerContainer = document.querySelector('.infos-header-container');
@@ -40,27 +50,27 @@ const header = () => {
                     <div className="nav-bar flex lg:hidden" onClick={() => setOpen(!open)}>
                         <i className="fa-solid fa-bars text-3xl"></i>
                     </div>
-                    <ul className="nav-list hidden lg:flex sm:w-[100%] flex justify-center sm:gap-3 xl:gap-8">
-                        <li className="text-xl"><Link to='/'>Home</Link></li>
-                        <li className="text-xl"><Link to='/about'>About Us</Link></li>
-                        <li className="text-xl"><Link to='/services'>Services</Link></li>
-                        <li className="text-xl"><Link to='/about'>News</Link></li>
-                        <li className="text-xl"><Link to='/contact'>Contact</Link></li>
+                    <ul className="nav-list hidden lg:flex sm:w-[100%] flex justify-center sm:gap-3 xl:gap-8" ref={navBar}>
+                        {menuItems.map((item, index) => (
+                            <li key={index} className={`text-xl ${location.pathname === item.to || (item.to === '/news' && location.pathname.startsWith('/news/')) ? 'active' : ''}`}>
+                                <Link to={item.to}>{item.label}</Link>
+                            </li>
+                        ))}
                     </ul>
                     <div className='header-action hidden w-[70%] sm:w-[35%] xl:w-[20%] lg:flex items-center justify-center rounded-full'>
                         <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank' className='flex items-center'>Contact Us<i className="fa-solid fa-arrow-up-right-from-square text-lg"></i></a>
                     </div>
                 </div>
-                {open && 
+                {open &&
                     <div className="nav-mobile">
-                    <ul className="w-[50%] flex flex-col gap-2">
-                        <li className="text-xl"><Link to='/'>Home</Link></li>
-                        <li className="text-xl"><Link to='/about'>About Us</Link></li>
-                        <li className="text-xl"><Link to='/services'>Services</Link></li>
-                        <li className="text-xl"><Link to='/about'>News</Link></li>
-                        <li className="text-xl"><Link to='/contact'>Contact</Link></li>
-                    </ul>
-                </div>
+                        <ul className="w-[50%] flex flex-col gap-2">
+                            {menuItems.map((item, index) => (
+                                <li key={index} className={`text-xl ${location.pathname === item.to || (item.to === '/news' && location.pathname.startsWith('/news/')) ? 'active' : ''}`}>
+                                    <Link to={item.to}>{item.label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 }
             </div>
 
