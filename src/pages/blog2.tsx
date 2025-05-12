@@ -1,7 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import NewsLetter from '../components/newsLetter'
-import blogimage from '../assets/images/news2.jpg'
+import blogimage from '../assets/images/news1.webp'
 
 const blog2 = () => {
     return (
@@ -18,7 +18,7 @@ const blog2 = () => {
                 <div className='flex flex-col sm:flex-row justify-center items-center'>
                     <img src={blogimage} alt="image" className='w-[80%]lg:w-[40%] sm:w-[50%] rounded-xl' />
                     <div className='blogpage-header'>
-                        <h1 className='text-2xl lg:text-4xlfont-bold'>HEFA Group: Your Strategic Partner on the Ground and in the Sky.</h1>
+                        <h1 className='text-2xl lg:text-4xl font-bold'>HEFA Group: Your Strategic Partner on the Ground and in the Sky.</h1>
                         <p className='text-justify'>
                             In the ever-evolving world of aviation, expertise goes far beyond technical
                             skills or logistics. It has become a true strategic lever—an accelerator of success

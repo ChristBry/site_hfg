@@ -1,7 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import NewsLetter from '../components/newsLetter'
-import blogimage from '../assets/images/iata.jpg'
+import blogimage from '../assets/images/iata.webp'
 
 const blog3 = () => {
     return (

@@ -1,7 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import NewsLetter from '../components/newsLetter'
-import blogimage from '../assets/images/saatm.png'
+import blogimage from '../assets/images/saatm.webp'
 
 const blog4 = () => {
     return (

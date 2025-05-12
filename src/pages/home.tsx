@@ -3,15 +3,15 @@ import Header from '../components/header'
 import AboutImage from '../assets/images/vision1.webp'
 import { Link } from 'react-router-dom'
 import Why from '../assets/images/why.webp'
-import Fadi from '../assets/images/fadi.jpg'
+import Fadi from '../assets/images/fadi.webp'
 import News1 from '../assets/images/news2.webp'
-import News2 from '../assets/images/saatm.png'
+import News2 from '../assets/images/saatm.webp'
 import Faq from '../assets/images/faq.webp'
 import Footer from '../components/footer'
 import Stats from '../components/stats'
 import NewsLetter from '../components/newsLetter'
 import { useRef, useState } from 'react'
-import { AnimatePresence, easeOut, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const home = () => {
     
@@ -30,18 +30,6 @@ const home = () => {
         }
         if (faqRef3.current === event.currentTarget) {
             setIsOpenFaq3(!isOpenFaq3)
-        }
-    }
-
-    const variants = {
-        hidden: { opacity: 0, y: 100 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 1,
-                ease: easeOut,
-            }
         }
     }
 

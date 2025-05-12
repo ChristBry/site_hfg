@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import Header from "../components/header"
 import News1 from '../assets/images/news2.webp'
-import News2 from '../assets/images/news2.jpg'
-import News3 from '../assets/images/iata.jpg'
-import News4 from '../assets/images/saatm.png'
+import News2 from '../assets/images/news1.webp'
+import News3 from '../assets/images/iata.webp'
+import News4 from '../assets/images/saatm.webp'
 import NewsLetter from "../components/newsLetter"
 import Footer from "../components/footer"
 
