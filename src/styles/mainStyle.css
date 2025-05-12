@@ -564,7 +564,7 @@ p {
 }
 
 .news-container {
-    margin: 0% 1%;
+    margin: 0px 20px;
 }
 
 .news h4, .news-card h3 {
@@ -1039,6 +1039,7 @@ p {
 
 .blogpage-header h1 {
     color: var(--text-black-700);
+    font-family: 'Inter', 'Arial';
 }
 
 .blogpage-header p {
@@ -1244,8 +1245,8 @@ p {
     }
 
     .news-container {
-        margin: 15px 30px;
-        padding: 0px 30px;
+        margin: 15px 0px;
+        padding: 0px 25px;
     }
 
     .news-button {
