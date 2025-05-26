@@ -171,7 +171,7 @@ p {
 /* Banner */
 .banner {
     position: relative;
-    background-image: linear-gradient(rgba(21, 33, 73, 0.1), rgba(21, 33, 73, 0.7)), url("../assets/images/bg.webp");
+    background-image: linear-gradient(rgba(21, 33, 73, 0.5), rgba(21, 33, 73, 0.3)), url("../assets/images/bg.webp");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -306,13 +306,11 @@ p {
 .service-description h2 {
     color: var(--text-white-100);
     margin: 20px 0px;
-    font-size: 32px;
     font-family: 'Noto sans', 'Arial';
 }
 
 .service-description p {
     color: var(--text-white-100);
-    font-size: 16px;
 }
 
 .services-list {
@@ -320,43 +318,31 @@ p {
 }
 
 .service {
-    background-color: var(--bg-white-100);
-    padding: 10px;
+    background-color: var(--bg-black-900);
+    padding: 10px 20px;
+    box-shadow: 12px 12px 2px 1px rgba(21, 33, 73, 0.7);
 }
 
-.service:hover {
-    background-color: var(--bg-black-900);
-    transition: all 0.5s ease-in-out;
-    transform: scale(1.05);
+.service.service-2 {
+    margin-top: 30px;
 }
 
 .service i {
-    padding: 10px;
-    color: var(--bg-black-900);
-}
-
-.service:hover i {
+    padding: 100px 15px 30px 20px;
     color: var(--bg-white-100);
 }
 
 .service h4 {
-    padding: 10px 0px;
-    font-size: 24px;
-    color: var(--text-black-700);
+    padding: 30px;
+    font-size: 35px;
+    color: var(--text-white-100);
     font-family: 'Noto sans', 'Arial';
 }
 
-.service:hover h4 {
-    color: var(--text-white-100);
-}
-
 .service p {
-    padding: 0px 10px;
-    font-size: 13px;
+    padding: 0px 30px;
+    font-size: 17px;
     font-family: 'Inter', 'Arial';
-}
-
-.service:hover p {
     color: var(--text-white-100);
 }
 
@@ -364,10 +350,6 @@ p {
     font-family: 'Inter', 'Arial';
     font-size: 17px;
     padding: 15px;
-    color: var(--text-black-700);
-}
-
-.service:hover .service-button {
     color: var(--text-white-100);
 }
 
@@ -376,7 +358,6 @@ p {
     padding: 15px;
     color: var(--text-white-100);
     font-family: 'Ubuntu', 'Arial';
-    font-size: 16px;
     margin: 2% 0px;
     transition: all 0.5s ease-in-out;
 }
@@ -444,7 +425,7 @@ p {
 /* Team */
 .team {
     background-color: var(--bg-white-100);
-    margin: 3% 5%;
+    margin: 3% 5% 12% 5%;
 }
 
 .team-container {
@@ -475,8 +456,13 @@ p {
     padding: 5px;
 }
 
+.video-youtube {
+    margin-top: 20px;
+}
+
 .team-image {
     margin-left: 10%;
+    margin-top: 80px;
 }
 
 .team-info {
@@ -488,12 +474,10 @@ p {
 .team-info h4 {
     color: var(--text-white-100);
     font-family: 'Inter', 'Arial';
-    font-size: 16px;
 }
 
 .team-info h5 {
     color: var(--text-white-100);
-    font-size: 14px;
     font-family: 'Noto sans', 'Arial';
 }
 
@@ -1150,6 +1134,10 @@ p {
         margin: 0;
     }
 
+    .service.service-2 {
+        margin-top: 0px;
+    }
+
     .team-info {
         margin: 250px 25px;
         padding: 10px;
@@ -1208,6 +1196,10 @@ p {
         margin: 5% 5% 0% 5%;
     }
 
+    .service i {
+        padding: 0px 15px 0px 20px;
+    }
+
     .allservice-button {
         margin: 5% 0px;
     }
@@ -1222,8 +1214,8 @@ p {
     }
 
     .team-info {
-        margin: 230px 15px;
-        padding: 10px;
+        margin: 60% 10%;
+        padding: 10px 4px;
     }
 
     .team-image {

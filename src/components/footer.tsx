@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const footer = () => {
+
     return (
         <div className='footer'>
             <div className='sm:flex justify-around footer-container'>

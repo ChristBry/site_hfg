@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom"
 import logo from "../assets/images/logo.webp"
 import { useEffect, useRef, useState } from "react"
+import { motion } from 'framer-motion'
 
 const header = () => {
     const [open, setOpen] = useState(false)
@@ -13,7 +14,7 @@ const header = () => {
         { to: '/news', label: 'News' },
         { to: '/contact', label: 'Contact' }
     ]
-    
+
     useEffect(() => {
         const handleScroll = () => {
             const headerContainer = document.querySelector('.infos-header-container');
@@ -29,20 +30,32 @@ const header = () => {
     }, [])
 
     return (
-        <div className="header fixed z-20">
-            <div className='infos-header-container flex justify-between items-center p-4'>
-                <div className="infos-header-title w-[100%] sm:flex sm:gap-2 xl:gap-10">
+        <motion.div className="header fixed z-20">
+            <motion.div className='infos-header-container flex justify-between items-center p-4'>
+                <motion.div
+                    initial={{ y: -200 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 2, ease: 'easeInOut' }}
+                    className="infos-header-title w-[100%] sm:flex sm:gap-2 xl:gap-10"
+                >
                     <p className="w-[200px]"><i className="fa-solid fa-envelope"></i>contact@hefagroups.com</p>
                     <p className="w-[180px]"><i className="fa-solid fa-phone"></i>(237) 670-897-408</p>
                     <p className="w-[180px]"><i className="fa-solid fa-location-dot"></i>Douala, Cameroon</p>
-                </div>
-                <div className="infos-header-social w-[30%] h-[40px] flex justify-end">
+                </motion.div>
+                <motion.div
+                    initial={{ y: -200 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 2, ease: 'easeInOut' }}
+                    className="infos-header-social w-[30%] h-[40px] flex justify-end"
+                >
                     <a href="https://www.facebook.com/hefagroupsarl" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f text-xl"></i></a>
                     <a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] instagram" aria-label="Instagram"><i className="fa-brands fa-instagram text-xl"></i></a>
                     <a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in text-xl"></i></a>
-                </div>
-            </div>
-            <div className="nav shadow-lg">
+                </motion.div>
+            </motion.div>
+            <motion.div
+                className="nav shadow-lg"
+            >
                 <div className="flex items-center justify-between">
                     <div className="logo w-[40%] sm:w-[20%]">
                         <Link to='/'><img src={logo} alt="logo" className="mx-auto" /></Link>
@@ -72,9 +85,9 @@ const header = () => {
                         </ul>
                     </div>
                 }
-            </div>
+            </motion.div>
 
-        </div>
+        </motion.div>
     )
 }
 

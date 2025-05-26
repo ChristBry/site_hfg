@@ -10,17 +10,29 @@ import Faq from '../assets/images/faq.webp'
 import Footer from '../components/footer'
 import Stats from '../components/stats'
 import NewsLetter from '../components/newsLetter'
-import { useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const home = () => {
-    
+
     const [isOpenFaq1, setIsOpenFaq1] = useState(false)
     const [isOpenFaq2, setIsOpenFaq2] = useState(false)
     const [isOpenFaq3, setIsOpenFaq3] = useState(false)
     const faqRef1 = useRef<HTMLDivElement>(null)
     const faqRef2 = useRef<HTMLDivElement>(null)
     const faqRef3 = useRef<HTMLDivElement>(null)
+    const [refServices, inView] = useInView({ threshold: 0.1 })
+    const [refWhy, inView1] = useInView({ threshold: 0.2 })
+    const [refTeam, inView2] = useInView({ threshold: 0.3 })
+    const [refArticles, inView3] = useInView({ threshold: 0.3 })
+    const [refFaq, inView4] = useInView({ threshold: 0.3 })
+    const controls = useAnimation();
+    const controls1 = useAnimation();
+    const controls2 = useAnimation();
+    const controls3 = useAnimation();
+    const controls4 = useAnimation();
+    const controls5 = useAnimation();
     const handleClickFaq = (event: React.MouseEvent<HTMLDivElement>) => {
         if (faqRef1.current === event.currentTarget) {
             setIsOpenFaq1(!isOpenFaq1)
@@ -33,6 +45,50 @@ const home = () => {
         }
     }
 
+    useEffect(() => {
+        if (inView) {
+            controls.start({
+                opacity: 1,
+                x: 0,
+            })
+        }
+        if (inView1) {
+            controls.start({
+                opacity: 1,
+                y: 0
+            })
+        }
+        if (inView2) {
+            controls1.start({
+                opacity: 1,
+                y: 0
+            })
+        }
+        if (inView3) {
+            controls2.start({
+                opacity: 1,
+                x: 0
+            })
+        }
+        if (inView3) {
+            controls3.start({
+                opacity: 1,
+                y: 0
+            })
+        }
+        if (inView4) {
+            controls4.start({
+                opacity: 1,
+                y: 0
+            })
+            controls5.start({
+                opacity: 1,
+                x: 0
+            })
+        }
+    }, [inView, inView1, inView2, inView3, inView4, controls, controls1, controls2, controls3, controls4])
+
+
     return (
         <div className='home'>
             <div>
@@ -41,18 +97,29 @@ const home = () => {
 
                 </div>
                 <div className='banner'>
-                    <p className='business w-[50%] sm:w-[30%] xl:w-[20%] text-center rounded-full'>Business Consulting</p>
-                    <h1 className='text-3xl font-bold'>Empowering Your<br />Business With Us</h1>
-                    <p className='description text-sm'>Experience unparallaled growth with our expert guidance. Navigate challenges, seize opportunities, and<br className='hidden sm:flex' />
-                        watch your business flourish under our exceptional consulting excellence.
-                    </p>
-                    <div className='banner-contact w-[250px] flex items-center justify-center rounded-full'>
-                        <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank' className='flex items-center'>Make an appointment<i className="fa-brands fa-whatsapp text-3xl"></i></a>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
+
+                    >
+                        <p className='business w-[50%] sm:w-[30%] xl:w-[20%] text-center rounded-full'>Business Consulting</p>
+                        <h1 className='text-3xl font-bold'>Empowering Your<br />Business With Us</h1>
+                        <p className='description text-sm'>Experience unparallaled growth with our expert guidance. Navigate challenges, seize opportunities, and<br className='hidden sm:flex' />
+                            watch your business flourish under our exceptional consulting excellence.
+                        </p>
+                        <div className='banner-contact w-[250px] flex items-center justify-center rounded-full'>
+                            <a href='https://wa.me/237670897408?text=Bonjour%20je%20souhaite%20prendre%20un%20rendez%20vous' target='_blank' className='flex items-center'>Make an appointment<i className="fa-brands fa-whatsapp text-3xl"></i></a>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
-
-            <div className="about flex flex-col lg:flex-row-reverse items-center">
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 3, ease: 'easeInOut' }}
+                className="about flex flex-col lg:flex-row-reverse items-center"
+            >
                 <div className="about-container">
                     <h4 className='w-40 text-center rounded-full'>About Us</h4>
                     <h2 className='font-bold text-2xl sm:text-3xl'>Taking Your Business To<br /> The Next Level</h2>
@@ -67,131 +134,198 @@ const home = () => {
                         internally and with clients).
                     </p>
                 </div>
-                <img src={AboutImage} alt='about' className='about-img w-[90%] sm:w-[60%] h-[80%] lg:w-[40%] xl:w-[50%]' />
-            </div>
+                <motion.img src={AboutImage} alt='about' className='about-img cursor-pointer hover:scale-105 transition-all duration-300 w-[100%] sm:w-[60%] h-[100%] lg:w-[40%] xl:w-[50%]' />
+            </motion.div>
 
-            <div className='service-part flex flex-col items-center'>
+            <motion.div
+                className='service-part flex flex-col items-center'
+            >
                 <div className='service-description flex flex-col items-center'>
                     <h4 className='rounded-full w-50 text-center'>Our Services</h4>
-                    <h2 className='text-center font-bold'>Discover Your Business Needs</h2>
-                    <p className='text-center'>We are specialize in building and managing teams of highly qualified advisors who strengthen your internal resources.</p>
+                    <h2 className='text-center text-2xl sm:text-4xl font-bold'>Discover Your Business Needs</h2>
+                    <p className='text-center text-xl sm:text-2xl'>We are specialize in building and managing teams of highly qualified advisors who strengthen your internal resources.</p>
                 </div>
-                <div className='services-list grid grid-cols-1 sm:grid-cols-2 lg:flex gap-4 lg:gap-6'>
+                <motion.div
+                    ref={refServices}
+                    className='services-list grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-15'
+                >
                     <motion.div
-                        className='service flex flex-col items-center rounded-xl lg:w-[30%]'
-                        whileTap={{ scale: 1.1 }}
+                        initial={{ opacity: 0, x: -800 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 1 }}
+                        className='service sm:w-[600px] h-[500px] sm:h-[350px] flex cursor-pointer flex-col-reverse sm:flex-row justify-center items-center sm:items-start rounded-xl'
                     >
-                        <i className="fa-solid fa-business-time text-4xl"></i>
-                        <h4 className='font-bold text-center'>Business Development</h4>
-                        <p className='text-justify'>We specialize in assembling and managing teams of highly
-                            skilled advisors who augment your in-house resources by
-                            providing valuable business models, strategies, and plans
-                            across Africa.</p>
-                        <Link to='/' className='service-button'>Learn more...</Link>
+                        <div className=''>
+                            <h4 className='text-center sm:text-left font-bold'>Business Development</h4>
+                            <p className='text-2xl text-justify sm:text-left'>We specialize in assembling and managing teams of highly
+                                skilled advisors who augment your in-house resources by
+                                providing valuable business models, strategies, and plans
+                                across Africa.
+                            </p>
+                        </div>
+                        <i className="fa-solid fa-business-time text-6xl sm:text-8xl"></i>
                     </motion.div>
-                    <motion.div className='service flex flex-col items-center rounded-xl lg:w-[30%]'
-                        whileTap={{ scale: 1.1 }}
+                    <motion.div
+                        initial={{ opacity: 1, x: 800 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 1 }}
+                        className='service service-2 sm:w-[600px] h-[500px] sm:h-[350px] flex cursor-pointer flex-col-reverse sm:flex-row justify-center items-center sm:items-start rounded-xl'
                     >
-                        <i className="fa-solid fa-building text-4xl"></i>
-                        <h4 className='font-bold text-center'>Representation Services</h4>
-                        <p className='text-justify'>We offer professional representation services for
-                            companies looking to establish or expand their presence in
-                            African markets, ensuring your interests are properly represented.
-                        </p>
-                        <Link to='/' className='service-button'>Learn more...</Link>
+                        <div className=''>
+                            <h4 className='text-center sm:text-left font-bold'>Representation Services</h4>
+                            <p className='text-2xl text-justify sm:text-left'>We offer professional representation services for
+                                companies looking to establish or expand their presence in
+                                African markets, ensuring your interests are properly represented.
+                            </p>
+                        </div>
+                        <i className="fa-solid fa-building text-6xl sm:text-8xl"></i>
                     </motion.div>
-                    <motion.div className='service flex flex-col items-center rounded-xl lg:w-[30%]'
-                        whileTap={{ scale: 1.1 }}
+                    <motion.div
+                        initial={{ opacity: 0, x: -800 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 2 }}
+                        className='service sm:w-[600px] h-[500px] sm:h-[300px] flex cursor-pointer flex-col-reverse sm:flex-row justify-center items-center sm:items-start rounded-xl'
                     >
-                        <i className="fa-solid fa-users text-4xl"></i>
-                        <h4 className='font-bold text-center'>Corporate Events</h4>
-                        <p className='text-justify'>Our team specializes in organizing and managing corporate
-                            events that help build your brand presence and establish
-                            valuable connections in target markets.</p>
-                        <Link to='/' className='service-button'>Learn more...</Link>
+                        <div className=''>
+                            <h4 className='text-center sm:text-left font-bold'>Corporate Events</h4>
+                            <p className='text-2xl text-justify sm:text-left'>Our team specializes in organizing and managing corporate
+                                events that help build your brand presence and establish
+                                valuable connections in target markets.
+                            </p>
+                        </div>
+                        <i className="fa-solid fa-users text-6xl sm:text-8xl"></i>
                     </motion.div>
-                    <motion.div className='service flex flex-col items-center rounded-xl lg:w-[30%]'
-                        whileTap={{ scale: 1.1 }}
+                    <motion.div
+                        initial={{ opacity: 0, x: 800 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 2 }}
+                        className='service service-2 sm:w-[600px] h-[500px] sm:h-[300px] flex cursor-pointer flex-col-reverse sm:flex-row justify-center items-center sm:items-start rounded-xl'
                     >
-                        <i className="fa-solid fa-user-pen text-4xl"></i>
-                        <h4 className='font-bold text-center'>Training Facilitation</h4>
-                        <p className='text-justify'>We provide specialized training programs designed to
-                            enhance the skills and capabilities of your team, preparing
-                            them for success in African markets.</p>
-                        <Link to='/' className='service-button'>Learn more...</Link>
+                        <div className=''>
+                            <h4 className='text-center sm:text-left font-bold'>Training Facilitation</h4>
+                            <p className='text-2xl text-justify sm:text-left'>We provide specialized training programs designed to
+                                enhance the skills and capabilities of your team, preparing
+                                them for success in African markets.
+                            </p>
+                        </div>
+                        <i className="fa-solid fa-user-pen text-6xl sm:text-8xl"></i>
                     </motion.div>
-                </div>
-                <Link to='/services' className='allservice-button flex items-center justify-center rounded-full w-[180px] text-center'>All Services</Link>
-            </div>
+                </motion.div>
+                <Link to='/services' className='allservice-button flex items-center justify-center rounded-full w-[220px] text-center text-2xl'>All Services</Link>
+            </motion.div>
 
-            <div className="choose-part flex items-center">
+            <motion.div
+                className="choose-part flex items-center">
                 <img src={Why} alt='why' className='hidden sm:flex sm:w-[30%]' />
-                <div className="choose-container sm:w-[80%]">
+                <motion.div
+                    ref={refWhy}
+                    className="choose-container sm:w-[80%]"
+                >
                     <h4 className='w-50 text-center rounded-full '>Why Choose Us</h4>
                     <h2 className='font-bold text-2xl lg:text-3xl'>Our Business Development Approach</h2>
-                    <div className='reason'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 0.5 }}
+                        className='reason'
+                    >
                         <div className='reason-label flex items-center'>
                             <h1>01-</h1>
                             <h5>Proposition Development</h5>
                         </div>
                         <p className='text-justify'>We work with you to create aclearly defined value
                             proposition that resonates with your target market.</p>
-                    </div>
-                    <div className='reason'>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 200 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 1 }}
+                        className='reason'>
                         <div className='reason-label flex items-center'>
                             <h1>02-</h1>
                             <h5>Growth Strategy</h5>
                         </div>
                         <p className='text-justify'>Our team devises comprehensive growth plans tailored to your specific
                             business objectives and market conditions.</p>
-                    </div>
-                    <div className='reason'>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 300 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 1.5 }}
+                        className='reason'>
                         <div className='reason-label flex items-center'>
                             <h1>03-</h1>
                             <h5>Profile Building</h5>
                         </div>
                         <p>We help build your credibility and visibility in target markets through strategic communications.</p>
-                    </div>
-                    <div className='reason'>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 400 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 2 }}
+                        className='reason'>
                         <div className='reason-label flex items-center'>
                             <h1>04-</h1>
                             <h5>Client Acquisition</h5>
                         </div>
                         <p>Our experienced business developers deliver your proposition in a compelling way, building rapport and
                             understanding prospect objectives.</p>
-                    </div>
-                </div>
-            </div>
+                    </motion.div>
+                </motion.div>
+            </motion.div>
 
             <Stats />
 
-            <div className="team flex flex-col sm:flex-row">
-                <div className='team-container sm:w-[80%] xl:w-[50%]'>
+            <motion.div
+                ref={refTeam}
+                className="team flex flex-col sm:flex-row"
+            >
+                <motion.div
+                    initial={{ opacity: 0, y: 300 }}
+                    animate={controls1}
+                    transition={{ visualDuration: 1, duration: 2 }}
+                    className='team-container sm:w-[80%] xl:w-[50%]'
+                >
                     <h4 className='w-50 text-center rounded-full'>Expert Team</h4>
-                    <h2 className='font-bold text-3xl'>Let’s Talk With<br /> Our Consultants</h2>
+                    <h2 className='font-bold text-3xl'>Let's Talk With<br /> Our Consultants</h2>
                     <p className='text-justify'>We are specialize in transforming businesses and fostering
                         growth through strategic insights and unparalleled expertise.
                     </p>
+                    <iframe
+                        src={`https://youtube.com/embed/Y34uqCIaHQU?si=ltMDfZmzkL7hsedf`}
+                        title="YouTube Video"
+                        className='video-youtube w-[100%] sm:w-[100%] h-[200px] sm:h-[60%]'
+                        allowFullScreen
+                    />
                     <div className='team-button hidden sm:flex w-[180px] rounded-full items-center justify-center'>
                         <Link to='/about' className='text-center'>See All <i className="fa-solid fa-arrow-right"></i></Link>
                     </div>
-                </div>
-                <div className="team-image">
-                    <div className='team-info absolute flex flex-col items-center w-60 rounded-xl'>
-                        <h4>Fadimatou Noutchemo</h4>
-                        <h5 className='font-bold'>Senior Consulting</h5>
+                </motion.div>
+                <motion.div className="team-image">
+                    <motion.div
+                        initial={{ opacity: 0, y: 300 }}
+                        animate={controls1}
+                        transition={{ visualDuration: 1, duration: 2 }}
+                        className='team-info absolute flex flex-col items-center w-50 sm:w-60 rounded-xl'
+                    >
+                        <h4 className='text-sm sm:text-lg'>Fadimatou Noutchemo</h4>
+                        <h5 className='text-sm font-bold'>Senior Consulting</h5>
                         <ul className='team-social flex gap-6'>
-                            <li><a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white rounded-full w-[35px] facebook flex items-center justify-center" aria-label='Facebook'><i className="fa-brands fa-facebook-f text-xl"></i></a></li>
-                            <li><a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white rounded-full w-[40px] instagram flex items-center justify-center" aria-label='Instagram'><i className="fa-brands fa-instagram text-xl"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[40px] linkedin flex items-center justify-center" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-xl"></i></a></li>
+                            <li><a href="https://www.facebook.com/share/1LnXUSik5f/?mibextid=wwXIfr" target="_blank" className="border border-white rounded-full w-[30px] sm:w-[35px] facebook flex items-center justify-center" aria-label='Facebook'><i className="fa-brands fa-facebook-f text-sm sm:text-lg"></i></a></li>
+                            <li><a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white rounded-full w-[30px] sm:w-[35px] instagram flex items-center justify-center" aria-label='Instagram'><i className="fa-brands fa-instagram text-sm sm:text-lg"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[30px] sm:w-[35px] linkedin flex items-center justify-center" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-sm sm:text-lg"></i></a></li>
                         </ul>
-                    </div>
-                    <img src={Fadi} alt='Fadimatou' className='flex justify-center rounded-xl w-[85%] sm:w-[80%] xl:w-[60%]' />
-                </div>
+                    </motion.div>
+                    <motion.img src={Fadi} alt='Fadimatou'
+                        initial={{ opacity: 0, y: -800 }}
+                        animate={controls1}
+                        transition={{ visualDuration: 1, duration: 2 }}
+                        className='flex justify-center rounded-xl w-[85%] sm:w-[80%] xl:w-[60%]' />
+                </motion.div>
                 <div className='team-button flex sm:hidden w-[40%] rounded-full items-center justify-center text-center'>
                     <Link to='/' className=''>See All <i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="plus-part flex flex-col items-center">
                 <h1 className='text-center text-4xl'>Optimize Operations for Maximum Efficiency</h1>
@@ -202,17 +336,29 @@ const home = () => {
                 </div>
             </div>
 
-            <div className="news-part flex flex-col lg:flex-row-reverse">
-                <div className='news-header'>
+            <motion.div
+                ref={refArticles}
+                className="news-part flex flex-col lg:flex-row-reverse"
+            >
+                <motion.div
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={controls2}
+                    transition={{ visualDuration: 1, duration: 1 }}
+                    className='news-header'
+                >
                     <h4 className='w-40 text-center rounded-full'>Last Articles</h4>
                     <h2 className='font-bold text-3xl'>Read Our Recent News & Insights</h2>
                     <p>Stay connected to our activities, events and the business world in Africa through our news.</p>
                     <div className="news-button hidden lg:flex w-30 text-center rounded-full">
                         <Link to='/news' className=' w-30'>View More</Link>
                     </div>
-                </div>
+                </motion.div>
                 <div className='news-container flex flex-col sm:flex-row gap-10'>
-                    <div className="news w-80">
+                    <motion.div
+                        initial={{ opacity: 0, y: 300 }}
+                        animate={controls3}
+                        transition={{ visualDuration: 1, duration: 1 }}
+                        className="news w-80">
                         <Link to='/news/Unlocking-Your-Company-s-Potential' className=''>
                             <h4 className='absolute rounded-xl'>Business</h4>
                             <img src={News1} alt="News" className='rounded-lg sm:hover:scale-105 transition-all duration-300' />
@@ -222,8 +368,13 @@ const home = () => {
                             Through our agile and personalized consulting approach, we help you identify your growth drivers, optimize your processes,
                             and innovate sustainably.</p>
                         <Link to='/news/Unlocking-Your-Company-s-Potential' className='button-news'>Read More...</Link>
-                    </div>
-                    <div className="news w-80">
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: -300 }}
+                        animate={controls3}
+                        transition={{ visualDuration: 1, duration: 1 }}
+                        className="news w-80"
+                    >
                         <Link to='/news/SAATM' className=''>
                             <h4 className='absolute rounded-xl'>Aviation</h4>
                             <img src={News2} alt="News" className='rounded-lg h-[170px] sm:hover:scale-105 transition-all duration-300' />
@@ -232,14 +383,17 @@ const home = () => {
                         <p className='text-justify'>In 2024, Africa will take a major step forward in regional integration with the gradual implementation of the Single African Air Transport Market (SAATM).
                             This ambitious project aims to liberalize African skies, thus facilitating connectivity between the countries.</p>
                         <Link to='/news/SAATM' className='button-news'>Read More...</Link>
-                    </div>
+                    </motion.div>
                 </div>
                 <div className="news-button flex lg:hidden w-30 text-center rounded-full">
                     <Link to='/news' className=' w-30'>View More</Link>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="faq-part flex">
+            <motion.div
+                ref={refFaq}
+                className="faq-part flex"
+            >
                 <div className="faq-container w-[500px] xl:w-[60%]">
                     <h4 className='w-30 text-center rounded-full'>FAQ'S</h4>
                     <h2 className='font-bold text-2xl lg:text-3xl'>Let’s Ask Anything About Business</h2>
@@ -247,10 +401,15 @@ const home = () => {
                         growth through strategic insights and unparalleled expertise.</p>
                     <div className='faq-list flex flex-col gap-2'>
                         <div className='faq sm:w-[100%] lg:w-[80%]' ref={faqRef1} onClick={handleClickFaq}>
-                            <div className='faq-header flex items-center justify-between rounded-xl cursor-pointer'>
+                            <motion.div
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={controls4}
+                                transition={{ visualDuration: 1, duration: 0.5 }}
+                                className='faq-header flex items-center justify-between rounded-xl cursor-pointer'
+                            >
                                 <h5>How do i know if my business needs consulting<br className='hidden lg:flex' /> services ?</h5>
                                 <i className="fa-solid fa-chevron-down"></i>
-                            </div>
+                            </motion.div>
                             <AnimatePresence initial={false}>
                                 {isOpenFaq1 && (
                                     <motion.p
@@ -268,10 +427,15 @@ const home = () => {
 
                         </div>
                         <div className='faq sm:w-[100%] lg:w-[80%]' ref={faqRef2} onClick={handleClickFaq}>
-                            <div className='faq-header flex items-center justify-between rounded-xl cursor-pointer' onClick={handleClickFaq}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 200 }}
+                                animate={controls4}
+                                transition={{ visualDuration: 1, duration: 1 }}
+                                className='faq-header flex items-center justify-between rounded-xl cursor-pointer'
+                            >
                                 <h5>How does the counseling process typically work ?</h5>
                                 <i className="fa-solid fa-chevron-down"></i>
-                            </div>
+                            </motion.div>
                             <AnimatePresence initial={false}>
                                 {isOpenFaq2 && (
                                     <motion.p
@@ -288,10 +452,15 @@ const home = () => {
                             </AnimatePresence>
                         </div>
                         <div className='faq sm:w-[100%] lg:w-[80%]' ref={faqRef3} onClick={handleClickFaq}>
-                            <div className='faq-header flex items-center justify-between rounded-xl cursor-pointer' onClick={handleClickFaq}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 300 }}
+                                animate={controls4}
+                                transition={{ visualDuration: 1, duration: 1.5 }}
+                                className='faq-header flex items-center justify-between rounded-xl cursor-pointer'
+                            >
                                 <h5>What sector of activity do you specialize in ?</h5>
                                 <i className="fa-solid fa-chevron-down"></i>
-                            </div>
+                            </motion.div>
                             <AnimatePresence initial={false}>
                                 {isOpenFaq3 && (
                                     <motion.p
@@ -310,10 +479,14 @@ const home = () => {
                     </div>
 
                 </div>
-                <div className="faq-image hidden sm:flex">
+                <motion.div
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={controls5}
+                    className="faq-image hidden sm:flex"
+                >
                     <img src={Faq} alt='FAQ' className='w-[500px] h-[500px]' />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
             <NewsLetter />
             <Footer />
         </div>
