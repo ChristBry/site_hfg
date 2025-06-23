@@ -49,8 +49,8 @@ const header = () => {
                     className="infos-header-social w-[30%] h-[40px] flex justify-end"
                 >
                     <a href="https://www.facebook.com/hefagroupsarl" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f text-xl"></i></a>
-                    <a href="https://www.instagram.com/fadimatounoutchemo?igsh=MTAwa2hkajR3b3F2aw==" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] instagram" aria-label="Instagram"><i className="fa-brands fa-instagram text-xl"></i></a>
-                    <a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in text-xl"></i></a>
+                    <a href="https://www.instagram.com/hefagroups" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] instagram" aria-label="Instagram"><i className="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="https://www.linkedin.com/company/hefagroup-partners" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in text-xl"></i></a>
                 </motion.div>
             </motion.div>
             <motion.div

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap');
 
 /* Propriétés CSS de base */
 :root {
@@ -35,23 +35,23 @@ body {
 }
 
 h1 {
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 h2 {
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 h3 {
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 h4 {
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 h5 {
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 p {
@@ -75,8 +75,8 @@ p {
 
 .infos-header-container p {
     color: var(--text-white-100);
-    font-family: 'Inter', 'Arial';
-    font-size: 14px;
+    font-family: 'Open Sans', 'Arial';
+    font-size: 15px;
 }
 
 .infos-header-title i {
@@ -125,8 +125,8 @@ p {
 
 .nav-list li,
 .nav-mobile li {
-    font-family: 'Inter', 'Arial';
-    font-size: 17px;
+    font-family: 'Open Sans', 'Arial';
+    font-size: 16px;
     color: var(--text-black-700);
 }
 
@@ -154,9 +154,9 @@ p {
 }
 
 .header-action a {
-    font-family: 'Inter', 'Arial';
+    font-family: 'Open Sans', 'Arial';
     padding: 15px;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .header-action a i {
@@ -192,18 +192,25 @@ p {
     padding: 20px;
     background-color: rgba(21, 33, 73, 0.7);
     color: var(--text-white-100);
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 .banner h1,
 .banner-page h1 {
-    font-family: 'Inter', 'Arial';
-    color: var(--text-white-100);
+    font-family: 'Open Sans', 'Arial';
+    color: var(--text-or-100);
+    font-size: 40px;
     margin: 20px auto;
+}
+
+.banner-page h1 {
+    color: var(--text-white-100);
 }
 
 .banner .description {
     color: var(--text-white-100);
+    font-family: 'Inter', 'Arial';
+    font-size: 18px;
 }
 
 .banner-contact {
@@ -219,7 +226,7 @@ p {
 }
 
 .banner-contact a {
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Open Sans', 'Arial';
     padding: 20px;
 }
 
@@ -244,43 +251,21 @@ p {
 .about-container h4 {
     padding: 20px;
     background-color: rgba(21, 33, 73, 0.7);
-    color: var(--text-white-100);
+    color: var(--text-or-100);
 }
 
 .about-container h2 {
     margin: 3% 0px;
     color: var(--text-black-700);
-    font-family: 'Noto sans', 'Arial';
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Open Sans', 'Arial';
 }
 
 .about-container p {
     font-family: 'Inter', 'Arial';
-    font-size: 15px;
 }
 
-.about-vision,
-.about-mission {
-    margin: 3% 3%;
-}
-
-.about-vision i,
-.about-mission i {
-    margin-right: 3%;
-    color: var(--text-black-700);
-}
-
-.about-vision h3,
-.about-mission h3 {
-    color: var(--text-black-700);
-    font-family: 'Noto sans', 'Arial';
-
-}
-
-.about-vision p,
-.about-mission p {
-    margin-top: 5px;
-    font-size: 15px;
-}
 
 /* Service */
 .service-part {
@@ -299,14 +284,15 @@ p {
 .faq-part h4 {
     padding: 20px;
     background-color: rgba(21, 33, 73, 0.7);
-    color: var(--text-white-100);
+    color: var(--text-or-100);
+    font-family: 'Open Sans', 'Arial';
     font-size: 18px;
 }
 
 .service-description h2 {
     color: var(--text-white-100);
     margin: 20px 0px;
-    font-family: 'Noto sans', 'Arial';
+    font-family: 'Inter', 'Arial';
 }
 
 .service-description p {
@@ -329,27 +315,20 @@ p {
 
 .service i {
     padding: 100px 15px 30px 20px;
-    color: var(--bg-white-100);
+    color: var(--text-or-100);
 }
 
 .service h4 {
     padding: 30px;
     font-size: 35px;
     color: var(--text-white-100);
-    font-family: 'Noto sans', 'Arial';
+    font-family: 'Open Sans', 'Arial';
 }
 
 .service p {
     padding: 0px 30px;
-    font-size: 17px;
+    font-size: 18px;
     font-family: 'Inter', 'Arial';
-    color: var(--text-white-100);
-}
-
-.service .service-button {
-    font-family: 'Inter', 'Arial';
-    font-size: 17px;
-    padding: 15px;
     color: var(--text-white-100);
 }
 
@@ -357,7 +336,7 @@ p {
     background-color: var(--bg-black-900);
     padding: 15px;
     color: var(--text-white-100);
-    font-family: 'Ubuntu', 'Arial';
+    font-family: 'Inter', 'Arial';
     margin: 2% 0px;
     transition: all 0.5s ease-in-out;
 }
@@ -387,19 +366,21 @@ p {
 .choose-container h2 {
     color: var(--text-black-700);
     margin: 3% 0%;
-    font-family: 'Noto sans', 'Arial';
+    font-family: 'Inter', 'Arial';
+}
+
+.reason-label {
+    margin-top: 3%;
 }
 
 .reason-label h1 {
-    font-size: 45px;
-    color: var(--text-black-700);
+    color: var(--text-or-100);
     opacity: 0.5;
     font-family: 'Inter', 'Arial';
 }
 
 .reason-label h5 {
     color: var(--text-black-700);
-    font-size: 25px;
     margin-left: 10px;
     font-family: 'Inter', 'Arial';
 }
@@ -435,7 +416,7 @@ p {
 .team-container h2 {
     margin: 3% 0px;
     color: var(--text-black-700);
-    font-family: 'Noto sans', 'Arial';
+    font-family: 'Inter', 'Arial';
 }
 
 .team-button {
@@ -478,7 +459,7 @@ p {
 
 .team-info h5 {
     color: var(--text-white-100);
-    font-family: 'Noto sans', 'Arial';
+    font-family: 'Inter', 'Arial';
 }
 
 .team-social {
@@ -519,6 +500,7 @@ p {
 
 .plus-part h1, .service-plus h1 {
     color: var(--text-white-100);
+    font-family: 'Open Sans', 'Arial';
     margin: 2%;
 }
 
@@ -552,11 +534,10 @@ p {
 }
 
 .news h4, .news-card h3 {
-    background-color: var(--bg-black-900);
+    background-color: var(--text-or-100);
     margin: 15px 20px;
     padding: 8px;
-    color: var(--text-white-100);
-    font-size: 14px;
+    color: var(--text-black-700);
     font-family: 'Inter', 'Arial';
 }
 
@@ -568,13 +549,11 @@ p {
 .news-card h4 {
     margin: 160px 20px;
     color: var(--text-white-100);
-    font-size: 14px;
     font-family: 'Inter', 'Arial';
 }
 
 .news p {
     margin: 5% 0px;
-    font-size: 14px;
     font-family: 'Inter', 'Arial';
 }
 
@@ -620,7 +599,6 @@ p {
 .faq-part p {
     color: var(--text-white-100);
     font-family: 'Inter', 'Arial';
-    font-size: 15px;
     margin: 2% 0%;
 }
 
@@ -632,7 +610,6 @@ p {
 }
 
 .faq-header h5 {
-    font-size: 15px;
     margin-left: 2%;
     font-family: 'Inter', 'Arial';
 }
@@ -643,7 +620,6 @@ p {
 }
 
 .faq p {
-    font-size: 14px;
     padding: 0px 10px;
     font-family: 'Inter', 'Arial';
 }
@@ -679,6 +655,16 @@ p {
     padding: 16px 20px;
 }
 
+.status-news, .status-contact {
+    color: var(--bg-black-900);
+    font-family: 'Inter', 'Arial';
+    margin-bottom: 25px;
+}
+
+.status-contact {
+    margin-left: 30px;
+}
+
 .newsletter button {
     background-color: var(--bg-black-900);
     color: var(--text-white-100);
@@ -692,23 +678,20 @@ p {
 }
 
 .footer h3 {
-    color: var(--text-white-100);
+    color: var(--text-or-100);
     margin: 2% 0%;
-    font-size: 25px;
     font-family: 'Inter', 'Arial';
 }
 
 .footer h5 {
     color: var(--text-white-100);
     margin: 0px 0%;
-    font-size: 16px;
     font-family: 'Inter', 'Arial';
 }
 
 .footer .links {
     color: var(--text-white-100);
     font-family: 'Inter', 'Arial';
-    font-size: 14px;
 }
 
 .footer .links:hover {
@@ -718,7 +701,6 @@ p {
 
 .contact-footer p {
     padding: 5px 0px;
-    font-size: 14px;
     font-family: 'Inter', 'Arial';
     color: var(--text-white-100);
 }
@@ -737,7 +719,6 @@ p {
 .copyright p {
     color: var(--text-white-100);
     font-family: 'Inter', 'Arial';
-    font-size: 14px;
 }
 
 .footer-social i {
@@ -1180,8 +1161,37 @@ p {
         padding-top: 50px;
     }
 
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner p {
+        font-size: 20px;
+    }
+
     .banner {
         margin-top: 30%;
+    }
+
+    .service {
+        padding: 5px 10px;
+        box-shadow: 12px 12px 2px 1px rgba(21, 33, 73, 0.7);
+    }
+
+    .service.service-2 {
+        margin-top: 0px;
+    }
+    
+    .service i {
+        padding: 0px;
+        color: var(--text-or-100);
+    }
+    
+    .service h4 {
+        padding: 20px;
+        font-size: 25px;
+        color: var(--text-white-100);
+        font-family: 'Open Sans', 'Arial';
     }
 
     .service-description h4 {
@@ -1201,7 +1211,7 @@ p {
     }
 
     .allservice-button {
-        margin: 5% 0px;
+        margin: 10%;
     }
 
     .team {

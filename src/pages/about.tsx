@@ -4,6 +4,8 @@ import Logo from '../assets/images/logo.webp'
 import Value from '../assets/images/vision1.webp'
 import Stats from "../components/stats"
 import Footer from "../components/footer"
+import { AnimatePresence, motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const about = () => {
     return (
