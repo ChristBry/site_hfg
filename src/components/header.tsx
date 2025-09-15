@@ -35,7 +35,7 @@ const header = () => {
                 <motion.div
                     initial={{ y: -200 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 2, ease: 'easeInOut' }}
+                    transition={{ duration: 1, ease: 'easeInOut' }}
                     className="infos-header-title w-[100%] sm:flex sm:gap-2 xl:gap-10"
                 >
                     <p className="w-[200px]"><i className="fa-solid fa-envelope"></i>contact@hefagroups.com</p>
@@ -45,7 +45,7 @@ const header = () => {
                 <motion.div
                     initial={{ y: -200 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 2, ease: 'easeInOut' }}
+                    transition={{ duration: 1, ease: 'easeInOut' }}
                     className="infos-header-social w-[30%] h-[40px] flex justify-end"
                 >
                     <a href="https://www.facebook.com/hefagroupsarl" target="_blank" className="border border-white flex justify-center items-center rounded-full w-[40px] facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f text-xl"></i></a>

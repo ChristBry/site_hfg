@@ -4,24 +4,51 @@ import Logo from '../assets/images/logo.webp'
 import Value from '../assets/images/vision1.webp'
 import Stats from "../components/stats"
 import Footer from "../components/footer"
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const about = () => {
+
+    const [refAbout, inView] = useInView({ threshold: 0.1 });
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start({
+                opacity: 1,
+                y: 0
+            })
+        }
+    }, [controls, inView])
+
+
     return (
         <div>
             <Header />
             <div className="space">
 
             </div>
-            <div className='banner-page flex flex-col justify-center items-center h-[200px]'>
-                <h1 className='text-4xl font-bold'>About Us</h1>
-                <div className="line"></div>
-            </div>
+            <motion.div className='banner-page flex flex-col justify-center items-center h-[200px]'>
+                <motion.h1  className='text-4xl font-bold'>
+                    About Us
+                </motion.h1>
+                <motion.div initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
+                    className="line"></motion.div>
+            </motion.div>
             <div className="intro-part flex flex-col sm:flex-row sm:items-center gap-6">
-                <h2 className="text-xl lg:text-3xl sm:border-r-4">HEFA Group : Driving Business Development Across Africa</h2>
-                <p>HEFA Group is an innovative business development company led by a team
+                <motion.h2 initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
+                    className="text-xl lg:text-3xl sm:border-r-4">HEFA Group : Driving Business Development Across Africa</motion.h2>
+                <motion.p initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}>HEFA Group is an innovative business development company led by a team
                     of qualified, dedicated African consultants across diverse domains. We
                     facilitate business growth throughout the continent with strategic thinking,
-                    managerial advice, and technical delivery.</p>
+                    managerial advice, and technical delivery.</motion.p>
             </div>
             <div className="about-part flex flex-col lg:flex-row-reverse items-center gap-6">
                 <div className="about-container">
@@ -40,7 +67,7 @@ const about = () => {
                 </div>
                 <img src={AboutImage} alt='about' className='about-img hidden sm:block w-[100%] sm:w-[60%] h-[20%] lg:w-[40%] xl:w-[35%]' />
             </div>
-            <div className="values-part flex flex-col items-center gap-4 h-[600px] sm:h-[700px] lg:h-[500px]">
+            <div ref={refAbout} className="values-part flex flex-col items-center gap-4 h-[600px] sm:h-[700px] lg:h-[500px]">
                 <h1 className="text-4xl text-white">Our Values</h1>
                 <div className="line bg-white"></div>
                 <p className="description text-justify xl:text-center text-lg text-white">Our core values include performance and results (creating the best possible outcomes for clients), integrity and accountability

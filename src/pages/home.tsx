@@ -100,8 +100,7 @@ const home = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
-
+                        transition={{ duration: 3, scale: { ease: "easeOut", visualDuration: 4, bounce: 0.2 }, delay: 0.5 }}
                     >
                         <p className='business w-[70%] sm:w-[30%] xl:w-[20%] text-center rounded-full'>Business Consulting</p>
                         <h1 className='text-3xl font-bold'>Empowering Your Business With Us</h1>
