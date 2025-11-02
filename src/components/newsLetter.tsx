@@ -1,7 +1,6 @@
-import { useInView } from 'react-intersection-observer'
 import Logo from '../assets/images/logo.webp'
-import { motion, useAnimation } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 const newsLetter = () => {
     const [formData, setFormData] = useState({
