@@ -29,14 +29,15 @@ const about = () => {
             <div className="space">
 
             </div>
-            <motion.div className='banner-page flex flex-col justify-center items-center h-[200px]'>
-                <motion.h1  className='text-4xl font-bold'>
+            <motion.div className='banner-page flex flex-col justify-center items-center h-[250px] sm:h-[400px]'>
+                <motion.h1 className='text-[35px] font-bold'>
                     About Us
                 </motion.h1>
-                <motion.div initial={{ opacity: 0, y: 50 }}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
-                    className="line"></motion.div>
+                    className="line" />
             </motion.div>
             <div className="intro-part flex flex-col sm:flex-row sm:items-center gap-6">
                 <motion.h2 initial={{ opacity: 0, x: -100 }}

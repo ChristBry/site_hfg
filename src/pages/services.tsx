@@ -9,6 +9,8 @@ import partner from "../assets/images/partner.webp"
 import attraction from "../assets/images/attraction.webp"
 import Footer from "../components/footer"
 import NewsLetter from "../components/newsLetter"
+import { motion } from 'framer-motion'
+
 
 const services = () => {
   return (
@@ -17,13 +19,21 @@ const services = () => {
       <div className="space">
 
       </div>
-      <div className='banner-page flex flex-col justify-center items-center h-[200px]'>
-        <h1 className='text-4xl font-bold'>Services</h1>
-        <div className="line"></div>
+      <div className='banner-page flex flex-col justify-center items-center h-[250px] sm:h-[400px]'>
+        <h1 className='text-[35px] font-bold'>Services</h1>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
+          className="line" />
       </div>
       <div className='service-header flex flex-col justify-center items-center'>
         <h1 className='text-4xl font-bold'>Our Solutions</h1>
-        <div className="line"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
+          className="line" />
       </div>
       <div className="services-part flex flex-col justify-center items-center gap-10 ">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-20">
@@ -67,12 +77,12 @@ const services = () => {
         </div>
         <div className="strategic-container flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10">
           <div className="sm:w-[20%] flex flex-col justify-center items-center gap-8 sm:gap-20 ">
-            <div className="">
+            <div className="mission hover:scale-105 transition-all duration-300 cursor-pointer">
               <h4 className="text-2xl text-center sm:text-end font-bold">Mission & Vision</h4>
               <p className="text-sm text-end text-white">Specifying organization's purpose and
                 future direction</p>
             </div>
-            <div className="">
+            <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
               <h4 className="text-2xl text-end font-bold">Performance Monitoring</h4>
               <p className="text-sm text-end text-white">Tracking results and adjusting
                 strategies</p>
@@ -98,12 +108,12 @@ const services = () => {
             </div>
           </div>
           <div className="w-[100%] sm:w-[20%] flex flex-col justify-center items-center gap-8 sm:gap-20 ">
-            <div className="">
+            <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
               <h4 className="text-2xl sm:text-start text-center font-bold">Strategy Development</h4>
               <p className="text-sm text-start text-white">Creating comprehensive plans and
                 initiatives</p>
             </div>
-            <div className="">
+            <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
               <h4 className="text-2xl sm:text-start text-center font-bold">Resource Allocation</h4>
               <p className="text-sm text-start text-white">Distributing resources to execute
                 policies and plans</p>

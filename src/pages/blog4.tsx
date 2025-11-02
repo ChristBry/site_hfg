@@ -2,6 +2,7 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import NewsLetter from '../components/newsLetter'
 import blogimage from '../assets/images/saatm.webp'
+import { motion } from 'framer-motion'
 
 const blog4 = () => {
     return (
@@ -10,9 +11,14 @@ const blog4 = () => {
             <div className="space">
 
             </div>
-            <div className='banner-page flex flex-col justify-center items-center h-[200px]'>
+            <div className='banner-page flex flex-col justify-center items-center h-[250px] sm:h-[400px]'>
                 <h1 className='text-xl sm:text-2xl lg:text-4xl font-bold'>Flying into the Future</h1>
-                <div className="line"></div>
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
+                    className="line"
+                />
             </div>
             <div className='blogpage-part flex flex-col gap-10 lg:gap-4'>
                 <div className='flex flex-col sm:flex-row justify-center items-center'>

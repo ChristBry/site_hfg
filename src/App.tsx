@@ -9,6 +9,7 @@ import Blog1 from './pages/blog1'
 import Blog2 from './pages/blog2'
 import Blog3 from './pages/blog3'
 import Blog4 from './pages/blog4'
+import Blog5 from './pages/blog5'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/news/Aviation-Expertise-A-Key-to-Success' element={<Blog2 />} />
           <Route path='/news/Industry-Recognition-and-Awards' element={<Blog3 />} />
           <Route path='/news/SAATM' element={<Blog4 />} />
+          <Route path='/news/medays-amadeus' element={<Blog5 />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -59,8 +59,8 @@ const contact = () => {
       <div className="space">
 
       </div>
-      <div className='banner-page flex flex-col justify-center items-center h-[200px]'>
-        <h1 className='text-4xl font-bold'>Contact</h1>
+      <div className='banner-page flex flex-col justify-center items-center h-[250px] sm:h-[400px]'>
+        <h1 className='text-[35px] font-bold'>Contact</h1>
         <div className="line"></div>
       </div>
       <div className='service-header flex flex-col justify-center items-center'>

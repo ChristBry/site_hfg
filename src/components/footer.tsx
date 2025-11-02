@@ -9,18 +9,18 @@ const footer = () => {
                     <h3 className='text-3xl'>Quick Links</h3>
                     <div className='flex flex-col gap-4'>
                         <Link to='/' className='links text-xl'>Home</Link>
-                        <Link to='/' className='links text-xl'>About Us</Link>
-                        <Link to='/' className='links text-xl'>News</Link>
-                        <Link to='/' className='links text-xl'>Contact</Link>
+                        <Link to='/about' className='links text-xl'>About Us</Link>
+                        <Link to='/news' className='links text-xl'>News</Link>
+                        <Link to='/contact' className='links text-xl'>Contact</Link>
                         <Link to='/' className='links text-xl'>FAQ'S</Link>
                     </div>
                 </div>
                 <div className="hidden sm:flex flex-col gap-4">
                     <h3 className='text-3xl'>Services</h3>
-                    <Link to='/' className='links text-xl'>Business Development</Link>
-                    <Link to='/' className='links text-xl'>Representation Services</Link>
-                    <Link to='/' className='links text-xl'>Corporate Events</Link>
-                    <Link to='/' className='links text-xl'>Training Facilitation</Link>
+                    <Link to='/services' className='links text-xl'>Business Development</Link>
+                    <Link to='/services' className='links text-xl'>Representation Services</Link>
+                    <Link to='/services' className='links text-xl'>Corporate Events</Link>
+                    <Link to='/services' className='links text-xl'>Training Facilitation</Link>
                 </div>
                 <div className="contact-footer">
                     <h3 className='text-3xl'>Contact Us</h3>

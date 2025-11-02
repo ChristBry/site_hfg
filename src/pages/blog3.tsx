@@ -32,14 +32,9 @@ const blog3 = () => {
 
             </div>
             <div className='banner-page'>
-                <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, scale: { type: "spring", visualDuration: 4, bounce: 0.2 } }}
-                    className='flex flex-col justify-center items-center h-[200px]'
-                >
-                    <h1 className='text-xl sm:text-2xl lg:text-4xl text-center font-bold'>Industry Recognition: IATA and Commonwealth</h1>
-                    <div className="line"></div>
+                <motion.div className='flex flex-col justify-center items-center h-[250px] sm:h-[400px]'>
+                    <h1 className='text-xl sm:text-2xl lg:text-[30px] text-center font-bold'>Industry Recognition: IATA and Commonwealth</h1>
+                    MLK
                 </motion.div>
             </div>
             <div className='blogpage-part flex flex-col gap-10 lg:gap-4'>
@@ -65,20 +60,9 @@ const blog3 = () => {
                         </p>
                     </motion.div>
                 </div>
-                <motion.div ref={refVideo} className='flex justify-center items-center'>
-                    <motion.iframe
-                        initial={{ opacity: 0, y: 500 }}
-                        animate={controls}
-                        transition={{ visualDuration: 1, duration: 1 }}
-                        src={`https://youtube.com/embed/Y34uqCIaHQU?si=ltMDfZmzkL7hsedf`}
-                        title="YouTube Video"
-                        className='video-youtube w-[100%] sm:w-[80%] h-[200px] sm:h-[500px]'
-                        allowFullScreen
-                    />
-                </motion.div>
                 <motion.div ref={ref1} className='blogpage-content'>
                     <motion.div
-                        initial={{opacity: 0, y: 500}}
+                        initial={{ opacity: 0, y: 500 }}
                         animate={controls1}
                         transition={{ visualDuration: 1, duration: 1 }}
                     >
@@ -102,6 +86,17 @@ const blog3 = () => {
                             and industry leaders, reinforcing the need for youth voices in aviation’s future.
                         </p>
                     </motion.div>
+                </motion.div>
+                <motion.div ref={refVideo} className='flex justify-center items-center'>
+                    <motion.iframe
+                        initial={{ opacity: 0, y: 500 }}
+                        animate={controls}
+                        transition={{ visualDuration: 1, duration: 1 }}
+                        src={`https://youtube.com/embed/Y34uqCIaHQU?si=ltMDfZmzkL7hsedf`}
+                        title="YouTube Video"
+                        className='video-youtube w-[100%] sm:w-[80%] h-[200px] sm:h-[500px]'
+                        allowFullScreen
+                    />
                 </motion.div>
             </div>
             <NewsLetter />

@@ -100,7 +100,7 @@ const home = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 3, scale: { ease: "easeOut", visualDuration: 4, bounce: 0.2 }, delay: 0.5 }}
+                        transition={{ duration: 3, scale: { ease: "easeOut", visualDuration: 2, bounce: 0.2 }, delay: 0.3 }}
                     >
                         <p className='business w-[70%] sm:w-[30%] xl:w-[20%] text-center rounded-full'>Business Consulting</p>
                         <h1 className='text-3xl font-bold'>Empowering Your Business With Us</h1>
@@ -116,7 +116,7 @@ const home = () => {
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 3, ease: 'easeInOut' }}
+                transition={{ duration: 1, ease: 'easeInOut' }}
                 className="about flex flex-col lg:flex-row-reverse items-center"
             >
                 <div className="about-container">
@@ -280,7 +280,7 @@ const home = () => {
                 className="team flex flex-col sm:flex-row"
             >
                 <motion.div
-                    initial={{ opacity: 0, y: 300 }}
+                    initial={{ opacity: 0, y: 100 }}
                     animate={controls1}
                     transition={{ visualDuration: 1, duration: 2 }}
                     className='team-container sm:w-[80%] xl:w-[50%]'
@@ -302,7 +302,7 @@ const home = () => {
                 </motion.div>
                 <motion.div className="team-image">
                     <motion.div
-                        initial={{ opacity: 0, y: 300 }}
+                        initial={{ opacity: 0, y: 200 }}
                         animate={controls1}
                         transition={{ visualDuration: 1, duration: 2 }}
                         className='team-info absolute flex flex-col items-center w-50 sm:w-60 rounded-xl'
@@ -315,10 +315,9 @@ const home = () => {
                             <li><a href="https://www.linkedin.com/in/fadimatou-noutchemo-103699b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" className="border border-white rounded-full w-[30px] sm:w-[35px] linkedin flex items-center justify-center" aria-label='LinkedIn'><i className="fa-brands fa-linkedin-in text-sm sm:text-lg"></i></a></li>
                         </ul>
                     </motion.div>
-                    <motion.img src={Fadi} alt='Fadimatou'
-                        initial={{ opacity: 0, y: -800 }}
-                        animate={controls1}
-                        transition={{ visualDuration: 1, duration: 2 }}
+                    <motion.img
+                        src={Fadi}
+                        alt='Fadimatou'
                         className='flex justify-center rounded-xl w-[85%] sm:w-[80%] xl:w-[60%]' />
                 </motion.div>
                 <div className='team-button flex sm:hidden w-[40%] rounded-full items-center justify-center text-center'>
@@ -367,7 +366,7 @@ const home = () => {
                         <Link to='/news/Unlocking-Your-Company-s-Potential' className='button-news text-xl'>Read More...</Link>
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0, y: -300 }}
+                        initial={{ opacity: 0, y: 300 }}
                         animate={controls3}
                         transition={{ visualDuration: 1, duration: 1 }}
                         className="news w-80"

@@ -9,16 +9,7 @@ const newsLetter = () => {
       })
       const [status, setStatus] = useState('');
       const GOOGLE_SHEETS_API_URL = 'https://script.google.com/macros/s/AKfycbypeEm9hhyopBsa6zv89TpIwWV7ysnbPA7OnCH9hIo9k3XSRo-cXhrAU6W_XfRlrg0CYw/exec';  
-    const [ref, inView] = useInView({ threshold: 0.3 })
-    const controls = useAnimation()
-    useEffect(() => {
-        if (inView) {
-            controls.start({
-                opacity: 1,
-                y: 0
-            })
-        }
-    }, [inView, controls])
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
@@ -57,11 +48,11 @@ const newsLetter = () => {
       };
 
     return (
-        <motion.div ref={ref} className='newsletter'>
+        <motion.div className='newsletter'>
             <motion.form
                 onSubmit={handleSubmit}
                 initial={{ opacity: 0, y: 300 }}
-                animate={controls}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ visualDuration: 1, duration: 1 }}
                 className='justify-center items-center flex flex-col'>
                 <img src={Logo} alt="logo" className='w-[60%] sm:w-[20%] mx-auto mt-10' />
